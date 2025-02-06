@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:paddingHorizontal="@dimen/padding_16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/backBtn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/icon_arrow_left"
+            android:background="?android:selectableItemBackground"
+            android:paddingVertical="@dimen/padding_10dp"
+            android:layout_marginTop="@dimen/margin_2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="@string/app_theme_title"
+            style="@style/CustomTextSongNameStyle18spSemiBold"
+            android:padding="@dimen/padding_10dp"
+            android:layout_marginStart="@dimen/margin_4dp"
+            app:layout_constraintStart_toEndOf="@id/backBtn"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:id="@+id/themeOptions"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/backBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="@dimen/margin_8dp"
+            android:layout_marginTop="@dimen/margin_24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/darkThemeOption"
+                android:layout_weight="1"
+                android:background="?android:selectableItemBackground"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/darkThemeIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/padding_18dp"
+                    android:paddingVertical="@dimen/padding_18dp"
+                    android:background="@drawable/gray_menu_item_bg"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/icon_unselected_dark_mode" />
+
+                <ImageView
+                    android:id="@+id/darkThemeSelected"
+                    app:layout_constraintTop_toTopOf="@id/darkThemeIcon"
+                    app:layout_constraintEnd_toEndOf="@id/darkThemeIcon"
+                    android:visibility="gone"
+                    android:src="@drawable/icon_added_white"
+                    android:layout_width="@dimen/width_20dp"
+                    android:layout_height="@dimen/height_20dp"/>
+
+                <TextView
+                    android:id="@+id/darkThemeTitle"
+                    style="@style/CustomTextStyleMedium12sp"
+                    android:text="@string/dark_mode"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    app:layout_constraintTop_toBottomOf="@id/darkThemeIcon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/lightThemeOption"
+                android:background="?android:selectableItemBackground"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/lightThemeIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/padding_18dp"
+                    android:paddingVertical="@dimen/padding_18dp"
+                    android:background="@drawable/gray_menu_item_bg"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/icon_unselected_light_mode" />
+
+                <ImageView
+                    android:id="@+id/lightThemeSelected"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toTopOf="@id/lightThemeIcon"
+                    app:layout_constraintEnd_toEndOf="@id/lightThemeIcon"
+                    android:src="@drawable/icon_added_white"
+                    android:layout_width="@dimen/width_20dp"
+                    android:layout_height="@dimen/height_20dp"/>
+
+                <TextView
+                    android:id="@+id/lightThemeTitle"
+                    android:text="@string/light_mode"
+                    style="@style/CustomTextStyleMedium12sp"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    app:layout_constraintTop_toBottomOf="@id/lightThemeIcon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/systemThemeOption"
+                android:layout_weight="1"
+                android:background="?android:selectableItemBackground"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/systemThemeIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/padding_18dp"
+                    android:paddingVertical="@dimen/padding_18dp"
+                    android:background="@drawable/gray_menu_item_bg"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/icon_unselected_system_mode" />
+
+
+                <ImageView
+                    android:id="@+id/systemThemeSelected"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toTopOf="@id/systemThemeIcon"
+                    app:layout_constraintEnd_toEndOf="@id/systemThemeIcon"
+                    android:src="@drawable/icon_added_white"
+                    android:layout_width="@dimen/width_20dp"
+                    android:layout_height="@dimen/height_20dp"/>
+
+                <TextView
+                    android:id="@+id/systemThemeTitle"
+                    style="@style/CustomTextStyleMedium12sp"
+                    android:text="@string/system"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    app:layout_constraintTop_toBottomOf="@id/systemThemeIcon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+        
+        <ImageView
+            android:id="@+id/nightSampleScreen"
+            android:layout_width="200dp"
+            android:layout_height="444dp"
+            android:src="@drawable/example_dark_mode"
+            android:layout_marginTop="@dimen/padding_28dp"
+            app:layout_constraintTop_toBottomOf="@id/themeOptions"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            android:id="@+id/daySampleScreen"
+            android:layout_width="200dp"
+            android:layout_height="444dp"
+            android:src="@drawable/example_light_mode"
+            android:layout_marginTop="@dimen/padding_28dp"
+            app:layout_constraintTop_toBottomOf="@id/themeOptions"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/applyBtn"
+            android:gravity="center"
+            android:text="@string/use"
+            style="@style/CustomTextStyle16spBold"
+            android:background="@drawable/background_highlight_round"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingHorizontal="@dimen/padding_24dp"
+            android:paddingVertical="@dimen/padding_10dp"
+            android:layout_marginBottom="@dimen/margin_20dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_44dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="?attr/rippleColor">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="?attr/soundtrackBackground" />
+
+            <stroke
+                android:width="@dimen/width_1dp"
+                android:color="?attr/iconSongBackground" />
+            <size
+                android:width="300dp"
+                android:height="60dp" />
+            <corners android:radius="@dimen/radius_30dp" />
+        </shape>
+    </item>
+</ripple>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="StandaloneScrollBar">
+        <attr name="scrollbarOrientation" format="enum">
+            <enum name="vertical" value="0" />
+            <enum name="horizontal" value="1" />
+        </attr>
+        <attr name="scrollbarTrackDrawable" format="reference" />
+        <attr name="scrollbarThumbDrawable" format="reference" />
+        <attr name="scrollbarMinThumbLength" format="dimension" />
+        <attr name="scrollbarThumbLength" format="dimension" />
+        <attr name="scrollbarThumbLengthByTrackRatio" format="float" />
+        <attr name="scrollBarTotalItem" format="float" />
+        <attr name="scrollbarAutoThumbLength" format="boolean" />
+        <attr name="scrollbarAlwaysShow" format="boolean" />
+        <attr name="scrollbarDelayBeforeAutoHideDuration" format="integer" />
+        <attr name="scrollbarDraggable" format="boolean" />
+        <attr name="scrollbarDefaultTrackTint" format="reference|color" />
+        <attr name="scrollbarDefaultThumbTint" format="reference|color" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_corner_top_round"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingVertical="@dimen/padding_12dp">
+
+    <View
+        android:background="@drawable/corner_all_radius_gray"
+        android:layout_width="@dimen/width_46dp"
+        android:layout_height="@dimen/height_4dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/padding_16dp"
+        android:paddingVertical="@dimen/padding_12dp">
+        
+        <TextView
+            android:text="@string/add_to_playlist"
+            style="@style/CustomTextStyle20spBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginVertical="@dimen/margin_8dp"
+        android:background="?attr/navLineItem" />
+
+    <LinearLayout
+        android:id="@+id/layout_play"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/padding_16dp"
+        android:paddingVertical="@dimen/padding_14dp">
+
+        <ImageView
+            android:layout_width="@dimen/width_50dp"
+            android:layout_height="@dimen/height_50dp"
+            android:padding="@dimen/padding_14dp"
+            android:src="@drawable/icon_add_playlist"
+            android:layout_gravity="center"
+            android:background="@drawable/icon_playlist_favourite"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_14dp"
+            android:text="@string/create_new_playlist"
+            style="@style/CustomTextSongNameStyle16spMedium"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/addPlaylistRV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+</LinearLayout>

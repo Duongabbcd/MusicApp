@@ -1,0 +1,438 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MusicApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/high_light_color</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:fontFamily">@font/inter_regular</item>
+    </style>
+
+    <style name="Theme.MusicApp" parent="Base.Theme.MusicApp">
+        <item name="textColor">@color/black_text</item>
+        <item name="backgroundPrimary">@drawable/day_bg</item>
+    </style>
+
+    <style name="Theme_Night_MusicApp" parent="Theme.MusicApp">
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowBackground">@drawable/night_bg</item>
+        <item name="android:colorControlHighlight">@color/white.0.0.5</item>
+        <item name="backgroundPrimary">@drawable/night_bg</item>
+        <item name="backgroundReverse">@color/medium_blue</item>
+        <item name="backgroundMiniPlayer">@color/transparent</item>
+        <item name="backgroundReverseLight">@color/light_blue</item>
+        <item name="backgroundHighlight">@color/dark_blue</item>
+        <item name="backgroundHighlightFade">@color/gray_light</item>
+        <item name="backgroundRound">@color/white</item>
+        <item name="iconColorReverse">@color/white_text</item>
+        <item name="textColorReverse">@color/black_text</item>
+        <item name="textColor">@color/white_text</item>
+        <item name="textColorHighlight">@color/high_light_color</item>
+        <item name="searchBackground">@color/white.0.1</item>
+        <item name="upperItem">@color/gray_bg</item>
+        <item name="lowerItem">@color/gray_bg_dark</item>
+        <item name="squareItemBackground">@color/white.0.1</item>
+        <item name="radiusBackground">@color/gray_bg</item>
+        <item name="navLineItem">@color/white.0.1</item>
+        <item name="highlightBackground">@drawable/night_bg</item>
+        <item name="soundtrackBackground">@color/gray_bg_darker</item>
+        <item name="topCornerBackground">@color/gray_bg_darker</item>
+        <item name="animationBackground">@color/gray_light.0.1</item>
+        <item name="rippleColor">@color/white.0.0.5</item>
+        <item name="selectButtonBackground">@color/button_selected</item>
+        <item name="artistIconBackground">@color/artist_selected</item>
+        <item name="exitIconBackground">@color/playing_track</item>
+        <item name="timeSleeperBackground">@color/high_light_color_fade0.15</item>
+        <item name="drawerMenuBackground">@color/gray_bg_darker</item>
+        <item name="itemSettingBackground">@color/white.0.1</item>
+        <item name="iconColor">@color/white</item>
+        <item name="cornerButtonBackground">@color/high_light_color_fade0.15</item>
+        <item name="cornerStrokeColor">@color/white.0.1</item>
+        <item name="iconSong">@color/white.0.2</item>
+        <item name="iconSongBackground">@color/white.0.1</item>
+        <item name="iconSquare">@color/purple_text</item>
+        <item name="iconAnonymous">@color/unselect_tab</item>
+        <item name="iconArtist">@color/white.0.1</item>
+        <item name="iconRound">@color/white.0.1</item>
+        <item name="iconAlbumSquare">@drawable/icon_album_night</item>
+        <item name="iconBigAnonymous">@drawable/icon_anonymous</item>
+        <item name="contentScrim">@color/dark_blue</item>
+        <item name="tabBackground">@color/dark_blue</item>
+        <item name="fastScrollTextColor">@color/night_fast_scroll</item>
+        <item name="fastScrollBackground">@color/white.0.25</item>
+        <item name="colorControlHighlight">@color/white.0.0.5</item>
+    </style>
+
+    <style name="Theme_Day_MusicApp" parent="Theme.MusicApp">
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:colorControlHighlight">#F0F0F0</item>
+        <item name="backgroundPrimary">@color/white</item>
+        <item name="backgroundReverse">@color/item_song_bg</item>
+        <item name="backgroundMiniPlayer">@color/white</item>
+        <item name="backgroundReverseLight">@color/white</item>
+        <item name="backgroundHighlight">@color/high_light_bg</item>
+        <item name="backgroundHighlightFade">@color/high_light_color_fade0.2</item>
+        <item name="backgroundRound">@color/light_search</item>
+        <item name="iconColorReverse">@color/black</item>
+        <item name="textColorReverse">@color/white_text</item>
+        <item name="textColor">@color/black_text</item>
+        <item name="textColorHighlight">@color/high_light_color</item>
+        <item name="searchBackground">@color/light_search</item>
+        <item name="upperItem">@color/light_search</item>
+        <item name="lowerItem">@color/light_search</item>
+        <item name="squareItemBackground">@color/high_light_color_fade0.12</item>
+        <item name="radiusBackground">@color/white</item>
+        <item name="navLineItem">@color/purple_text.0.2</item>
+        <item name="highlightBackground">@color/high_light_color</item>
+        <item name="soundtrackBackground">@color/item_song_bg</item>
+        <item name="topCornerBackground">@color/white</item>
+        <item name="animationBackground">@color/light_search</item>
+        <item name="rippleColor">#F0F0F0</item>
+        <item name="selectButtonBackground">@color/high_light_color_fade0.2</item>
+        <item name="artistIconBackground">@color/high_light_color_fade0.2</item>
+        <item name="exitIconBackground">@color/exit_selected</item>
+        <item name="timeSleeperBackground">@color/high_light_color_fade0.2</item>
+        <item name="drawerMenuBackground">@color/white</item>
+        <item name="itemSettingBackground">@color/light_search</item>
+        <item name="iconColor">@color/white</item>
+        <item name="cornerButtonBackground">@color/white</item>
+        <item name="cornerStrokeColor">@color/purple_text.0.3</item>
+        <item name="iconSong">@color/high_light_color</item>
+        <item name="iconSongBackground">@color/high_light_color_fade0.12</item>
+        <item name="iconSquare">@color/white</item>
+        <item name="iconAnonymous">@color/purple_text</item>
+        <item name="iconRound">@color/white</item>
+        <item name="iconArtist">@color/item_song_bg</item>
+        <item name="iconAlbumSquare">@drawable/icon_album_day</item>
+        <item name="iconBigAnonymous">@drawable/icon_big_anonymous</item>
+        <item name="contentScrim">@color/high_light_bg</item>
+        <item name="tabBackground">@color/white</item>
+        <item name="fastScrollTextColor">@color/day_fast_scroll</item>
+        <item name="fastScrollBackground">@color/black.0.25</item>
+    </style>
+
+
+    <!-- res/values/styles.xml -->
+    <style name="CustomTextStyle">
+        <item name="android:fontFamily">@font/inter_regular</item>
+        <item name="android:textColor">?attr/textColor</item>
+    </style>
+
+    <style name="CustomTextStyleMedium">
+        <item name="android:fontFamily">@font/inter_medium</item>
+        <item name="android:textColor">?attr/textColor</item>
+    </style>
+
+    <style name="CustomTextStyleMedium12sp" parent="CustomTextStyleMedium">
+        <item name="android:fontFamily">@font/inter_medium</item>
+        <item name="android:textSize">@dimen/size_12sp</item>
+    </style>
+
+    <style name="CustomTextStyleSemiBold">
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="android:textColor">?attr/textColor</item>
+    </style>
+
+    <style name="CustomTextStyleBold">
+        <item name="android:fontFamily">@font/inter_bold</item>
+        <item name="android:textColor">?attr/textColor</item>
+    </style>
+
+    <style name="CustomTextStyle14sp" parent="CustomTextStyle">
+        <item name="android:textColor">?attr/textColor</item>
+        <item name="android:textSize">@dimen/size_14sp</item>
+    </style>
+
+    <style name="CustomTextStyleMedium14sp" parent="CustomTextStyleMedium">
+        <item name="android:textColor">?attr/textColor</item>
+        <item name="android:textSize">@dimen/size_14sp</item>
+    </style>
+
+    <style name="CustomTextStyleSemiBold14sp" parent="CustomTextStyleSemiBold">
+        <item name="android:textColor">?attr/textColor</item>
+        <item name="android:textSize">@dimen/size_14sp</item>
+    </style>
+
+    <style name="CustomTextStyle15sp" parent="CustomTextStyle">
+        <item name="android:textColor">?attr/textColor</item>
+        <item name="android:textSize">@dimen/size_15sp</item>
+    </style>
+
+    <style name="CustomTextStyle15spMedium" parent="CustomTextStyleMedium">
+        <item name="android:textColor">?attr/textColor</item>
+        <item name="android:textSize">@dimen/size_15sp</item>
+    </style>
+
+    <style name="CustomTextStyle16sp" parent="CustomTextStyle">
+        <item name="android:textColor">?attr/textColor</item>
+        <item name="android:textSize">@dimen/size_16sp</item>
+    </style>
+
+    <style name="CustomTextStyleMedium16sp" parent="CustomTextStyleMedium">
+        <item name="android:textColor">?attr/textColor</item>
+        <item name="android:textSize">@dimen/size_16sp</item>
+    </style>
+
+    <style name="CustomTextStyleSemiBold16sp" parent="CustomTextStyleSemiBold">
+        <item name="android:textColor">?attr/textColor</item>
+        <item name="android:textSize">@dimen/size_16sp</item>
+    </style>
+
+    <style name="CustomTextStyle16spBold" parent="CustomTextStyleBold">
+        <item name="android:textColor">?attr/textColor</item>
+        <item name="android:textSize">@dimen/size_16sp</item>
+    </style>
+
+    <style name="CustomTextStyle17sp" parent="CustomTextStyle">
+        <item name="android:textColor">?attr/textColor</item>
+        <item name="android:textSize">@dimen/size_17sp</item>
+    </style>
+
+    <style name="CustomTextStyleMedium17sp" parent="CustomTextStyleMedium">
+        <item name="android:textColor">?attr/textColor</item>
+        <item name="android:textSize">@dimen/size_17sp</item>
+    </style>
+
+    <style name="CustomTextStyle17spBold" parent="CustomTextStyleBold">
+        <item name="android:textColor">?attr/textColor</item>
+        <item name="android:textSize">@dimen/size_17sp</item>
+    </style>
+
+    <style name="CustomTextStyle12sp" parent="CustomTextStyle">
+        <item name="android:textColor">?attr/textColor</item>
+        <item name="android:textSize">@dimen/size_12sp</item>
+    </style>
+
+    <style name="CustomTextStyle12spSemiBold" parent="CustomTextStyleSemiBold">
+        <item name="android:textColor">?attr/textColor</item>
+        <item name="android:textSize">@dimen/size_12sp</item>
+    </style>
+
+    <style name="CustomTextStyle20sp" parent="CustomTextStyle">
+        <item name="android:textSize">@dimen/size_20sp</item>
+        <item name="android:textColor">?attr/textColor</item>
+    </style>
+
+    <style name="CustomTextStyle20spMedium" parent="CustomTextStyleMedium">
+        <item name="android:textSize">@dimen/size_20sp</item>
+        <item name="android:textColor">?attr/textColor</item>
+    </style>
+
+    <style name="CustomTextStyle22sp" parent="CustomTextStyle">
+        <item name="android:textSize">@dimen/size_22sp</item>
+        <item name="android:textColor">?attr/textColor</item>
+    </style>
+
+    <style name="CustomTextStyle22spBold" parent="CustomTextStyleBold">
+        <item name="android:textSize">@dimen/size_22sp</item>
+        <item name="android:textColor">?attr/textColor</item>
+    </style>
+
+    <style name="CustomTextStyle20spBold" parent="CustomTextStyleBold">
+        <item name="android:fontFamily">@font/inter_bold</item>
+        <item name="android:textSize">@dimen/size_20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?attr/textColor</item>
+    </style>
+
+    <style name="CustomGiantTextStyle28sp" parent="CustomTextStyle20spBold">
+        <item name="android:textSize">@dimen/size_28sp</item>
+    </style>
+
+    <style name="CustomGiantTextStyle24sp" parent="CustomTextStyle20spBold">
+        <item name="android:textSize">@dimen/size_24sp</item>
+    </style>
+
+    <style name="CustomTextStyleReverse" parent="CustomTextStyle">
+        <item name="android:textColor">@color/light_purple_text</item>
+        <item name="android:textSize">@dimen/size_16sp</item>
+    </style>
+
+    <style name="CustomTextStyleReverse12sp" parent="CustomTextStyle">
+        <item name="android:textColor">@color/light_purple_text</item>
+        <item name="android:textSize">@dimen/size_12sp</item>
+    </style>
+
+    <style name="CustomTextStyleReverse11sp" parent="CustomTextStyleReverse">
+        <item name="android:textSize">@dimen/size_11sp</item>
+    </style>
+
+    <style name="CustomTextStyleReverse14sp" parent="CustomTextStyleReverse">
+        <item name="android:textSize">@dimen/size_14sp</item>
+    </style>
+
+    <style name="CustomTextPurpleStyle" parent="CustomTextStyleReverse">
+        <item name="android:textColor">@color/purple_text</item>
+        <item name="android:textSize">@dimen/size_15sp</item>
+    </style>
+
+    <style name="CustomTextPurpleStyleSemiBold" parent="CustomTextStyleSemiBold">
+        <item name="android:textColor">@color/purple_text</item>
+        <item name="android:textSize">@dimen/size_16sp</item>
+    </style>
+
+    <style name="CustomTextPurpleStyleMedium" parent="CustomTextStyleMedium">
+        <item name="android:textColor">@color/purple_text</item>
+        <item name="android:textSize">@dimen/size_16sp</item>
+    </style>
+
+    <style name="CustomTextGrayStyle" parent="CustomTextStyle">
+        <item name="android:textColor">@color/drawer_item_bg_0.1</item>
+        <item name="android:textSize">@dimen/size_16sp</item>
+    </style>
+
+    <style name="CustomTextHighlightStyle12sp" parent="CustomTextStyle">
+        <item name="android:textColor">@color/high_light_color</item>
+        <item name="android:textSize">@dimen/size_12sp</item>
+    </style>
+
+    <style name="CustomTextHighlightStyle16sp" parent="CustomTextStyle">
+        <item name="android:textColor">@color/high_light_color</item>
+        <item name="android:textSize">@dimen/size_16sp</item>
+    </style>
+
+    <style name="CustomTextHighlightStyle16spMedium" parent="CustomTextStyleMedium">
+        <item name="android:textColor">@color/high_light_color</item>
+        <item name="android:textSize">@dimen/size_16sp</item>
+    </style>
+
+    <style name="CustomTextHighlightStyle16spSemiBold" parent="CustomTextStyleSemiBold">
+        <item name="android:textColor">@color/high_light_color</item>
+        <item name="android:textSize">@dimen/size_16sp</item>
+    </style>
+
+    <style name="CustomTextHighlightStyle16spBold" parent="CustomTextStyleBold">
+        <item name="android:textColor">@color/high_light_color</item>
+        <item name="android:textSize">@dimen/size_16sp</item>
+    </style>
+
+    <style name="CustomTextHighlightStyle20sp" parent="CustomTextStyleBold">
+        <item name="android:textColor">@color/high_light_color</item>
+        <item name="android:textSize">@dimen/size_20sp</item>
+    </style>
+
+    <style name="CustomTextHighlightStyle28sp" parent="CustomTextStyleBold">
+        <item name="android:textColor">@color/high_light_color</item>
+        <item name="android:textSize">@dimen/size_40sp</item>
+    </style>
+
+    <style name="CustomTextHighlightStyle24sp" parent="CustomTextStyleBold">
+        <item name="android:textColor">@color/high_light_color</item>
+        <item name="android:textSize">@dimen/size_28sp</item>
+    </style>
+
+    <style name="CustomTextSongNameStyle16sp" parent="CustomTextStyle">
+        <item name="android:textColor">?attr/textColor</item>
+        <item name="android:textSize">@dimen/size_16sp</item>
+    </style>
+
+    <style name="CustomTextSongNameStyle16spMedium" parent="CustomTextStyleMedium">
+        <item name="android:textColor">?attr/textColor</item>
+        <item name="android:textSize">@dimen/size_16sp</item>
+    </style>
+
+    <style name="CustomTextSongNameStyleBold16sp" parent="CustomTextSongNameStyle16sp">
+        <item name="android:fontFamily">@font/inter_bold</item>
+    </style>
+
+    <style name="CustomTextSongNameStyle18sp" parent="CustomTextStyle">
+        <item name="android:textColor">?attr/textColor</item>
+        <item name="android:textSize">@dimen/size_18sp</item>
+    </style>
+
+    <style name="CustomTextSongNameStyle18spSemiBold" parent="CustomTextStyleSemiBold">
+        <item name="android:textColor">?attr/textColor</item>
+        <item name="android:textSize">@dimen/size_18sp</item>
+    </style>
+
+    <style name="CustomTextSongArtistStyle" parent="CustomTextSongNameStyle16sp">
+        <item name="android:textSize">@dimen/size_14sp</item>
+        <item name="android:textColor">@color/purple_text</item>
+    </style>
+
+    <style name="CustomTextSongArtistStyle12sp" parent="CustomTextSongArtistStyle">
+        <item name="android:textSize">@dimen/size_12sp</item>
+        <item name="android:textColor">@color/purple_text</item>
+    </style>
+
+    <style name="CustomTextSongMediumStyle15sp" parent="CustomTextStyleMedium">
+        <item name="android:textSize">@dimen/size_15sp</item>
+        <item name="android:textColor">@color/purple_text</item>
+    </style>
+
+    <style name="CustomTextSongArtistStyleSemiBold12sp" parent="CustomTextStyleSemiBold">
+        <item name="android:textSize">@dimen/size_12sp</item>
+        <item name="android:textColor">@color/purple_text</item>
+    </style>
+
+    <style name="CustomTextSongArtistStyle16sp" parent="CustomTextSongNameStyle16sp">
+        <item name="android:textSize">@dimen/size_16sp</item>
+        <item name="android:textColor">@color/purple_text</item>
+    </style>
+
+    <style name="CustomTextMediumStyle16sp" parent="CustomTextStyleMedium">
+        <item name="android:textSize">@dimen/size_16sp</item>
+        <item name="android:textColor">?attr/textColor</item>
+    </style>
+
+    <style name="CustomTextSongMiniPlayerStyle" parent="CustomTextSongNameStyle16sp">
+        <item name="android:textSize">@dimen/size_12sp</item>
+        <item name="android:textColor">@color/light_purple_text</item>
+    </style>
+
+    <style name="CustomSearchStyle" parent="CustomTextSongArtistStyle">
+        <item name="android:textSize">@dimen/size_20sp</item>
+        <item name="android:textColor">?attr/textColor</item>
+    </style>
+
+    <style name="CustomSearchStyleMedium" parent="CustomSearchStyle">
+        <item name="android:textSize">@dimen/size_16sp</item>
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:textColor">@color/light_purple_text</item>
+    </style>
+
+    <style name="CustomSearchStyleBold" parent="CustomSearchStyle">
+        <item name="android:textSize">@dimen/size_16sp</item>
+        <item name="fontFamily">@font/inter_bold</item>
+        <item name="android:textColor">@color/light_purple_text</item>
+    </style>
+
+    <style name="CustomSearchStyleSemiBold" parent="CustomSearchStyle">
+        <item name="android:textSize">@dimen/size_16sp</item>
+        <item name="fontFamily">@font/inter_semibold</item>
+        <item name="android:textColor">@color/light_purple_text</item>
+    </style>
+
+    <!--    Floating action button-->
+
+    <style name="FloatingActionButtonStyle" parent="Widget.Design.FloatingActionButton">
+        <item name="shapeAppearanceOverlay">@style/FabShapeStyle</item>
+    </style>
+
+    <style name="FabShapeStyle" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">50%</item>
+        <item name="cornerFamilyTopLeft">rounded</item>
+        <item name="cornerFamilyTopRight">rounded</item>
+        <item name="cornerFamilyBottomRight">rounded</item>
+        <item name="cornerFamilyBottomLeft">rounded</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlayExtended" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">0dp</item>
+        <item name="cornerSizeTopLeft">50%</item>
+    </style>
+    <style name="NavigationTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">@font/inter_regular</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="NavigationTabSelectTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="textAllCaps">false</item>
+    </style>
+</resources>

@@ -1,0 +1,32 @@
+package com.example.service.utils
+
+object Keys {
+    const val KEY_SEND_1 = "KEY_SEND_1"
+    const val KEY_SEND_2 = "KEY_SEND_2"
+    const val KEY_SEND_3 = "KEY_SEND_3"
+
+    //sharedPreferences
+    const val KEY_AUDIO_CACHE = "KEY_AUDIO_CACHE"
+    const val KEY_HOME_TOP_SONG = "KEY_HOME_TOP_SONG"
+    const val KEY_HOME_POP_SONG = "KEY_HOME_POP_SONG"
+    const val KEY_HOME_NEW_SONG = "KEY_HOME_NEW_SONG"
+    const val KEY_ARTIST_CACHE = "KEY_ARTIST_CACHE"
+    const val KEY_GENRES_CACHE = "KEY_GENRES_CACHE"
+    const val KEY_ALBUM_CACHE = "KEY_ALBUM_CACHE"
+    const val KEY_RECENTLY_CACHE = "KEY_RECENTLY_CACHE"
+    const val KEY_DOWNLOADED_CACHE = "KEY_DOWNLOADED_CACHE"
+    const val KEY_SEARCH_CACHE = "KEY_SEARCH_CACHE"
+    const val KEY_LIKE_MEDIA = "KEY_LIKE_MEDIA"
+
+    const val KEY_RECOMMEND_ALBUM_CACHE = "KEY_RECOMMEND_ALBUM_CACHE"
+    const val KEY_RECOMMEND_ARTIST_CACHE = "KEY_RECOMMEND_ARTIST_CACHE"
+    const val KEY_RECOMMEND_PLAYLIST_CACHE = "KEY_RECOMMEND_PLAYLIST_CACHE"
+    const val KEY_RECOMMEND_SLIDER_TRACKS_CACHE = "KEY_RECOMMEND_SLIDER_TRACKS_CACHE"
+
+    //key permission
+    const val KEY_DOWNLOADED_PERMISSION = 1000
+    const val KEY_LIBRARY_PERMISSION = 1001
+    const val KEY_PLAYLIST_PERMISSION = 1002
+    const val KEY_BROWSER_PERMISSION = 1003
+
+}

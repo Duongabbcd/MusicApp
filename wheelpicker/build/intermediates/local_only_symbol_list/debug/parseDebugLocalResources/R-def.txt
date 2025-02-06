@@ -1,0 +1,11 @@
+R_DEF: Internal format may change without notice
+local
+attr? center_item_color
+attr? center_text_size
+attr? circular
+attr? other_item_color
+attr? selector_height
+attr? selector_width
+id timeValueText
+layout number_picker
+styleable WheelPicker android:orientation circular selector_width selector_height center_item_color other_item_color center_text_size

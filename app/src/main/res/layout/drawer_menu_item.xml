@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/padding_16dp"
+    android:background="?android:selectableItemBackground"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <ImageView
+        android:id="@+id/function_img"
+        android:layout_width="@dimen/width_44dp"
+        android:layout_height="@dimen/height_44dp"
+        android:padding="@dimen/padding_8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/function_name"
+        app:layout_constraintBottom_toBottomOf="@id/function_name"
+        android:background="@drawable/gray_menu_item_bg"
+        android:src="@drawable/icon_search" />
+
+    <TextView
+        android:id="@+id/function_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_24dp"
+        android:layout_marginVertical="@dimen/margin_24dp"
+        style="@style/CustomTextSongNameStyle16spMedium"
+        app:layout_constraintStart_toEndOf="@id/function_img"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <View
+        android:id="@+id/navLineItem"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginStart="70dp"
+        android:background="?attr/navLineItem"
+        app:layout_constraintStart_toStartOf="@id/function_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

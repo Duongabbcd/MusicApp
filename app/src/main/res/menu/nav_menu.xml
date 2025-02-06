@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/icon_search"
+        android:title="Search music online"
+        android:background="@drawable/ripple_effect"/>
+    <item
+        android:id="@+id/music"
+        android:icon="@drawable/icon_music"
+        android:title="My music"
+        android:background="@drawable/ripple_effect"/>
+
+    <item
+        android:id="@+id/playlist"
+        android:icon="@drawable/icon_playlist"
+        android:title="Playlist"
+        android:background="@drawable/ripple_effect"/>
+    <item
+        android:id="@+id/files"
+        android:icon="@drawable/icon_files"
+        android:title="Files"
+        android:background="@drawable/ripple_effect"/>
+</menu>

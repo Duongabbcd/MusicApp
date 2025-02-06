@@ -1,0 +1,10 @@
+com.cheonjaeung.powerwheelpicker.android
+attr center_item_color
+attr center_text_size
+attr circular
+attr other_item_color
+attr selector_height
+attr selector_width
+id timeValueText
+layout number_picker
+styleable WheelPicker android_orientation center_item_color center_text_size circular other_item_color selector_height selector_width

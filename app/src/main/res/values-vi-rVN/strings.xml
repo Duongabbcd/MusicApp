@@ -1,0 +1,198 @@
+<resources>
+    <string name="app_name">MusicApp</string>
+    <string name="music_downloader">Music Downloader</string>
+    <string name="open">Mở</string>
+    <string name="close">Đóng</string>
+    <string name="default_language">Mặc định</string>
+
+
+    <!--    Base Fragment-->
+    <string name="home">Trang chủ</string>
+    <string name="download">Tải về</string>
+    <string name="album">Album</string>
+    <string name="file_path">Đường dẫn</string>
+    <string name="artist">Tác giả</string>
+    <string name="song">Bài hát</string>
+    <string name="language">Ngôn ngữ</string>
+
+    <string name="search_music">Tìm kiếm bài hát</string>
+    <string name="my_music">Bài hát của tôi</string>
+    <string name="my_playlist">Danh sách nhạc</string>
+    <string name="all_files">Tệp</string>
+    <string name="sleep_timer">Hẹn giờ</string>
+    <string name="rate_app">Đánh giá </string>
+    <string name="setting">Cài đặt</string>
+    <string name="privacy_policy">Bảo mật</string>
+    <string name="search_music_online">Tìm kiếm bài hát trực tuyến…</string>
+    <string name="search">Tìm kiếm…</string>
+    <string name="cancel">Hủy</string>
+    <string name="exit">Thoát</string>
+    <string name="do_you_want_to_exit_app">Bạn muốn tắt ứng dụng?</string>
+    <string name="exit_app">Thoát ứng dụng</string>
+    <string name="unknown_artist">Không tên</string>
+    <string name="unknown_song">Không tên</string>
+    <string name="delete_from_device">Xóa khỏi thiết bị</string>
+    <string name="delete_from_playlist">Xóa danh sách phát</string>
+    <string name="remove_from_playlist">Xóa khỏi danh sách phát</string>
+    <string name="remove_from_playing_queue">Xóa khỏi hàng bài hát đang chơi</string>
+    <string name="share">Chia sẻ</string>
+    <string name="more_from_artist">Thông tin tác giả</string>
+    <string name="more_from_album">Thông tin album</string>
+    <string name="rename">Đổi tên</string>
+    <string name="add_to_playlist">Thêm vào danh sách phát</string>
+    <string name="add_to_queue">Thêm vào danh sách nghe</string>
+    <string name="no_song_founds">Không có bài hát nào ở đây.</string>
+
+    <string name="play_all">Phát tất cả</string>
+    <string name="play_song">Phát bài hát</string>
+    <string name="play_album">Phát album</string>
+    <string name="play_artist">Phát</string>
+
+    <string name="ok">Đồng ý</string>
+    <string name="clear">Xóa</string>
+    <string name="delete">Xóa</string>
+    <string name="remove">Xóa</string>
+    <string name="use">Su dung</string>
+    <string name="using">Đang sử dụng</string>
+    <string name="use_now">Dùng ngay bây giờ</string>
+
+    <!--    playlist-->
+    <string name="playlist">Danh sách phát</string>
+    <string name="create_new_playlist">Tạo danh sách mới</string>
+    <string name="rename_playlist">Đổi tên danh sách</string>
+    <string name="enter_playlist_name">Điền tên</string>
+    <string name="playlist_song_added_before">Những bài hát này đã có trong danh sách phát!</string>
+    <string name="playlist_added_successfully">Thêm thành công!</string>
+
+    <!--    audio-->
+    <string name="audio">Tệp âm thanh</string>
+    <string name="rename_audio">Đổi tên</string>
+    <string name="enter_audio_name">Điền tên</string>
+
+    <!--    dialog-->
+    <string name="title_must_be_not_empty">Phần tên không được để trống</string>
+    <string name="title_is_exist">Trùng tên</string>
+
+    <string name="do_you_want_delete">Bạn có muốn xóa %1$s?</string>
+    <string name="add_song_success">Thêm bài hát thành công</string>
+    <string name="add_song">Thêm</string>
+    <string name="add_songs">Thêm bài hát</string>
+    <string name="add_songs_now">Thêm bài hát ngay</string>
+
+    <!--    delete dialog-->
+    <string name="delete_queue">Xóa hàng đợi</string>
+    <string name="delete_artist">Xóa tác giả</string>
+    <string name="delete_album">Xóa Album</string>
+    <string name="delete_song">Xóa bài hát</string>
+    <string name="delete_file">Xóa file?</string>
+    <string name="delete_playlist">Xóa danh sách phát?</string>
+
+    <string name="delete_queue_question">Bạn muốn xóa danh sách bài hát này?</string>
+    <string name="delete_artist_question">Bạn muốn xóa danh sách tác giả này?</string>
+    <string name="delete_album_question">Bạn muốn xóa danh sách albumnày?</string>
+    <string name="delete_audio_from_playlist">Bạn muốn xóa bài hát này &quot;%1$s&quot; khỏi danh sách phát?</string>
+    <string name="delete_audio_question">Xóa tệp %1$s</string>
+    <string name="delete_playlist_question">Bạn muốn xóa danh sách phát %1$s</string>
+    <string name="delete_favourite_playlist_question">Bạn muốn xóa danh sách phát yêu thích %1$s</string>
+    <!--    sort dialog-->
+    <string name="sort_by">Sắp xếp theo</string>
+    <string name="title">Tiêu đề</string>
+    <string name="date">Ngày thêm</string>
+    <string name="duration">Độ dài bài hát</string>
+    <string name="size">Kích cỡ</string>
+    <string name="search_playlist">Tìm danh sách phát…</string>
+    <string name="add_song_now">Thêm bài hát ngay</string>
+    <string name="_10_minutes_later">10 phút sau</string>
+    <string name="turn_off">Tắt</string>
+    <string name="_20_minutes_later">20 phút sau</string>
+    <string name="_30_minutes_later">30 phút sau</string>
+    <string name="_60_minutes_later">60 phút sau</string>
+    <string name="custom">Tự chọn</string>
+    <string name="set">Cài đặt</string>
+    <string name="done">Xong</string>
+    <string name="file_information">Thông tin tệp</string>
+
+
+    <!--    sort order options-->
+    <string name="largest">To nhất</string>
+    <string name="smallest">Nhỏ nhất</string>
+    <string name="shortest">Ngắn nhất</string>
+    <string name="longest">Dài nhất</string>
+    <string name="oldest">Cũ nhất</string>
+    <string name="newest">Mới nhất</string>
+    <string name="z_to_a">Z đến A</string>
+    <string name="a_to_z">A đến Z</string>
+    <string name="settings">Cài đặt</string>
+
+    <!--    setting-->
+    <string name="app_theme_title">Giao diện app</string>
+    <string name="app_theme_sub_title">Sáng / Tối / Hệ thống</string>
+    <string name="language_title">Ngôn ngữ</string>
+    <string name="language_sub_title">Thiết bị</string>
+    <string name="share_app_title">Chia sẻ ứng dụng</string>
+    <string name="share_app_sub_title">Chia sẻ …</string>
+    <string name="rating_app_title">Đánh giá sản phẩm</string>
+    <string name="rating_app_sub_title">Đánh giá</string>
+    <string name="download_path">Nơi chứa tệp tải xuống</string>
+    <string name="full_screen">Toàn màn hình</string>
+    <string name="version">Phiên bản:</string>
+    <string name="new_playlist">Danh sách mới</string>
+    <string name="light_mode"> Sáng</string>
+    <string name="dark_mode">Tối</string>
+    <string name="system">Hệ thống</string>
+    <string name="search_or_enter_key_word">Điền từ khóa để tìm bài hát</string>
+    <string name="up_next">Bài hát thứ</string>
+    <string name="playing_queue">Hàng bài hát đang chơi</string>
+    <string name="shuffle">Trộn bài</string>
+    <string name="custom_sleep_timer">Custom sleep timer</string>
+    <string name="genres">Thể loại</string>
+    <string name="minute">Phút</string>
+    <string name="hour">Giờ</string>
+    <string name="getting_ready">Chuẩn bị sẵn sàng…</string>
+
+    <!--    Equalizer-->
+    <string name="equalizer_is_not_available">Chỉnh sửa âm thanh không khả dụng</string>
+
+    <!-- Language question-->
+    <string name="change_language">Đổi ngôn ngữ</string>
+    <string name="change_language_question">Bạn muốn đổi ngôn ngữ của ứng dụng sang %1$s?</string>
+    <string name="clear_my_favourite">Xóa danh sách bài hát yêu thích</string>
+
+    <!--    Download song-->
+    <string name="download_song_notification">Đang tải %1$s</string>
+    <string name="download_song_conclusion">Tải thành công!</string>
+    <string name="downloading_song">Bài hát đang được tải, hãy chờ trong chốc lát…</string>
+
+    <!--    text in case-->
+    <plurals name="song_count">
+        <item quantity="one">%d bài hát</item>
+        <item quantity="zero">%d bài hát</item>
+        <item quantity="other">%d bài hát</item>
+    </plurals>
+
+    <plurals name="album_count">
+        <item quantity="zero">%d album</item>
+        <item quantity="one">%d album</item>
+        <item quantity="other">%d album</item>
+    </plurals>
+
+    <plurals name="artist_count">
+        <item quantity="zero">%d tác giả</item>
+        <item quantity="one">%d tác giả</item>
+        <item quantity="other">%d tác giả</item>
+    </plurals>
+
+    <plurals name="playing_song_queue">
+        <item quantity="zero">%d/%d bài hát</item>
+        <item quantity="one">%d/%d bài hát</item>
+        <item quantity="other">%d/%d bài hát</item>
+    </plurals>
+
+    <plurals name="song_selected">
+        <item quantity="one">Đã chọn %d bài hát</item>
+        <item quantity="zero">Đã chọn %d bài hát</item>
+        <item quantity="other">Đã chọn %d bài hát</item>
+    </plurals>
+
+
+</resources>

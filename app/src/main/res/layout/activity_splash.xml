@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/night_bg"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/appIcon"
+        android:layout_width="@dimen/width_72dp"
+        android:layout_height="@dimen/height_72dp"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/corner_all_radius_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@id/appName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16dp"
+        style="@style/CustomTextStyle22spBold"
+        android:textColor="@color/white"
+        android:text="@string/music_downloader"
+        app:layout_constraintTop_toBottomOf="@id/appIcon"
+        app:layout_constraintStart_toStartOf="@id/appIcon"
+        app:layout_constraintEnd_toEndOf="@id/appIcon"/>
+
+    <TextView
+        android:text="@string/getting_ready"
+        android:padding="@dimen/padding_10dp"
+        style="@style/CustomTextStyleReverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/progressBar"
+        app:layout_constraintStart_toStartOf="@id/progressBar"
+        app:layout_constraintEnd_toEndOf="@id/progressBar"/>
+    
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginHorizontal="@dimen/margin_40dp"
+        android:layout_marginBottom="@dimen/margin_80dp"
+        android:progressTint="@color/high_light_color"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/high_light_color"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_20dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

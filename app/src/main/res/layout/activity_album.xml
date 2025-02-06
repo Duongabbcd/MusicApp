@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/playerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundHighlight">
+
+    <RelativeLayout
+        android:layout_marginTop="@dimen/margin_32dp"
+        android:id="@+id/basicLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_6dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/backBtn"
+            android:src="@drawable/icon_back"
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:padding="@dimen/padding_10dp"
+            android:layout_alignParentStart="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/moreBtn"
+            android:padding="@dimen/padding_10dp"
+            android:src="@drawable/icon_top_detail"
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/albumIcon"
+        android:layout_width="@dimen/width_130dp"
+        android:layout_height="@dimen/height_100dp"
+        android:background="?attr/iconAlbumSquare"
+        android:layout_marginTop="@dimen/margin_12dp"
+        android:layout_marginStart="@dimen/margin_16dp"
+        app:layout_constraintTop_toBottomOf="@+id/basicLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingHorizontal="@dimen/padding_16dp">
+
+    </ImageView>
+
+    <TextView
+        android:id="@id/albumName"
+        style="@style/CustomTextStyle20spBold"
+        android:textColor="@color/white_text"
+        android:layout_marginStart="@dimen/margin_15dp"
+        app:layout_constraintStart_toEndOf="@+id/albumIcon"
+        app:layout_constraintTop_toTopOf="@+id/albumIcon"
+        app:layout_constraintBottom_toBottomOf="@id/albumIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/albumLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_18dp"
+        android:background="@drawable/background_corner_top_round"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/albumIcon"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/layout_mini_player"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/songOfAlbumRV"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <com.example.scrollbar.StandaloneScrollBar
+            android:id="@+id/verticalScrollbar"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/margin_3dp"
+            android:layout_marginTop="@dimen/margin_12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:scrollbarThumbDrawable="@drawable/scrollbar_vertical_custom_thumb"
+            app:scrollbarOrientation="vertical" />
+
+        <ImageView
+            android:id="@+id/scrollToTop"
+            android:layout_width="@dimen/width_46dp"
+            android:layout_height="@dimen/height_46dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="@dimen/margin_16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/layout_mini_player"
+            android:src="@drawable/icon_scroll_to_top"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/layout_mini_player"
+            layout="@layout/layout_mini_player"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

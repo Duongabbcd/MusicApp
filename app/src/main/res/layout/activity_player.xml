@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/playerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundPrimary"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin_30dp"
+        android:background="@drawable/corner_top_radius"
+        android:backgroundTint="@color/medium_blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/miniTrack"
+            android:layout_width="@dimen/width_40dp"
+            android:layout_height="@dimen/width_40dp"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_12dp"
+            android:src="@drawable/icon_track"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/playingQueueSongName"
+            style="@style/CustomTextSongNameStyle16sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_14dp"
+            android:layout_marginEnd="@dimen/margin_16dp"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:focusable="true"
+            app:layout_constraintEnd_toStartOf="@id/playerMoreFunctions"
+            app:layout_constraintBottom_toTopOf="@+id/playingQueueArtist"
+            app:layout_constraintStart_toEndOf="@id/miniTrack"
+            app:layout_constraintTop_toTopOf="@id/miniTrack" />
+
+        <TextView
+            android:id="@+id/playingQueueArtist"
+            style="@style/CustomTextSongMiniPlayerStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/unknown_artist"
+            app:layout_constraintStart_toStartOf="@id/playingQueueSongName"
+            app:layout_constraintTop_toBottomOf="@id/playingQueueSongName" />
+
+        <ImageView
+            android:id="@+id/playerMoreFunctions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_8dp"
+            android:layout_marginEnd="@dimen/margin_16dp"
+            android:src="@drawable/icon_add_queue_white"
+            android:background="?android:selectableItemBackgroundBorderless"
+            app:layout_constraintBottom_toBottomOf="@id/miniTrack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/miniTrack" />
+
+        <View
+            android:id="@+id/divideLine"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginVertical="@dimen/margin_12dp"
+            android:background="?attr/navLineItem"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/playingQueueArtist" />
+
+
+        <ImageView
+            android:id="@+id/playingSongIcon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/margin_60dp"
+            android:src="@drawable/icon_playing_song"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divideLine"
+            app:layout_constraintBottom_toTopOf="@+id/bonusFunction"/>
+
+        <LinearLayout
+            android:id="@+id/bonusFunction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_24dp"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/padding_12dp"
+            android:paddingBottom="@dimen/padding_20dp"
+            app:layout_constraintBottom_toTopOf="@+id/playingSeekbar">
+
+            <ImageView
+                android:id="@+id/playingFavourite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_8dp"
+                android:layout_weight="1"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:src="@drawable/icon_white_favourite" />
+
+            <ImageView
+                android:id="@+id/playingAddPlaylist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_8dp"
+                android:layout_weight="1"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:src="@drawable/icon_white_add_playlist" />
+
+            <ImageView
+                android:id="@+id/playingEqualizer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_8dp"
+                android:layout_weight="1"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:src="@drawable/icon_white_equalizer" />
+
+            <ImageView
+                android:id="@+id/playingAlarm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_8dp"
+                android:layout_weight="1"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:src="@drawable/icon_white_alarm" />
+
+            <ImageView
+                android:id="@+id/playingSong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_8dp"
+                android:layout_weight="1"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:src="@drawable/icon_white_share" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/firstFloor"
+            android:layout_marginStart="@dimen/margin_32dp"
+            android:layout_marginEnd="@dimen/margin_32dp"
+            app:layout_constraintTop_toBottomOf="@id/bonusFunction"
+            app:layout_constraintStart_toStartOf="@id/bonusFunction"
+            app:layout_constraintEnd_toEndOf="@id/bonusFunction"
+            android:background="@drawable/background_gray_corner_round"
+            android:layout_marginVertical="@dimen/margin_24dp"
+            app:layout_constraintBottom_toTopOf="@+id/basicFunction"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_5dp"/>
+
+        <View
+            android:id="@+id/secondFloor"
+            android:layout_marginStart="@dimen/margin_54dp"
+            app:layout_constraintTop_toBottomOf="@id/bonusFunction"
+            android:layout_marginTop="-0.5dp"
+            app:layout_constraintStart_toStartOf="@id/firstFloor"
+            app:layout_constraintEnd_toStartOf="@id/playingSeekbar"
+            app:layout_constraintBottom_toTopOf="@+id/basicFunction"
+            android:background="@drawable/corner_left_bg"
+            android:backgroundTint="@color/high_light_color"
+            android:layout_width="@dimen/width_40dp"
+            android:layout_height="@dimen/height_5dp"/>
+
+
+        <SeekBar
+            android:id="@+id/playingSeekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="50"
+            android:minHeight="@dimen/height_5dp"
+            android:maxHeight="@dimen/height_5dp"
+            app:layout_constraintBottom_toTopOf="@+id/basicFunction"
+            android:progressDrawable="@drawable/background_seekbar_track"
+            android:layout_marginBottom="@dimen/margin_24dp"
+            android:paddingStart="@dimen/padding_60dp"
+            android:paddingEnd="@dimen/padding_64dp"/>
+
+
+        <LinearLayout
+            android:id="@+id/basicFunction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_44dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingVertical="@dimen/padding_12dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:id="@+id/playingShuffle"
+                android:layout_width="@dimen/width_32dp"
+                android:layout_height="@dimen/height_32dp"
+                android:padding="4dp"
+                android:layout_weight="1"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:src="@drawable/icon_white_shuffle" />
+
+            <ImageView
+                android:id="@+id/playingPrevious"
+                android:layout_width="@dimen/width_32dp"
+                android:layout_height="@dimen/height_32dp"
+                android:padding="4dp"
+                android:layout_weight="1"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:src="@drawable/icon_white_previous" />
+
+            <ImageView
+                android:id="@+id/playingPower"
+                android:layout_width="@dimen/width_64dp"
+                android:layout_height="@dimen/width_64dp"
+                android:padding="@dimen/padding_4dp"
+                android:layout_weight="1"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:src="@drawable/icon_track_pause" />
+
+            <ImageView
+                android:id="@+id/playingNext"
+                android:layout_width="@dimen/width_32dp"
+                android:layout_height="@dimen/height_32dp"
+                android:padding="4dp"
+                android:layout_weight="1"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:src="@drawable/icon_white_next" />
+
+            <ImageView
+                android:id="@+id/playingDuplicate"
+                android:layout_width="@dimen/width_32dp"
+                android:layout_height="@dimen/height_32dp"
+                android:padding="4dp"
+                android:layout_weight="1"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:src="@drawable/icon_white_duplicate" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

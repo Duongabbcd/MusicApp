@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="@dimen/margin_12dp">
+
+    <FrameLayout
+        android:id="@+id/frameAlbumIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/albumIcon"
+            android:layout_width="@dimen/width_50dp"
+            android:layout_height="@dimen/height_50dp"
+            android:padding="11dp"
+            android:background="@drawable/drawer_menu_item_bg"
+            android:src="@drawable/icon_artist" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/albumName"
+        style="@style/CustomTextSongNameStyle16sp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_14dp"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintEnd_toStartOf="@id/albumAddMore"
+        app:layout_constraintStart_toEndOf="@id/frameAlbumIcon"
+        app:layout_constraintBottom_toTopOf="@id/albumArtist"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/albumArtist"
+        style="@style/CustomTextSongArtistStyle12sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/unknown_artist"
+        app:layout_constraintStart_toStartOf="@id/albumName"
+        app:layout_constraintTop_toBottomOf="@id/albumName"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageView
+        android:id="@+id/albumDot"
+        android:layout_width="@dimen/width_4dp"
+        android:layout_height="@dimen/height_4dp"
+        android:layout_marginHorizontal="@dimen/margin_8dp"
+        android:src="@drawable/icon_dot"
+        app:layout_constraintBottom_toBottomOf="@id/albumArtist"
+        app:layout_constraintStart_toEndOf="@id/albumArtist"
+        app:layout_constraintTop_toTopOf="@id/albumArtist" />
+
+    <TextView
+        android:id="@+id/albumDuration"
+        style="@style/CustomTextSongArtistStyle12sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_8dp"
+        app:layout_constraintBottom_toBottomOf="@id/albumArtist"
+        app:layout_constraintStart_toEndOf="@id/albumArtist"
+        app:layout_constraintTop_toTopOf="@id/albumArtist" />
+
+
+    <ImageView
+        android:id="@+id/albumAddMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_8dp"
+        android:layout_marginEnd="@dimen/margin_8dp"
+        android:src="@drawable/icon_details"
+        android:background="?android:selectableItemBackgroundBorderless"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

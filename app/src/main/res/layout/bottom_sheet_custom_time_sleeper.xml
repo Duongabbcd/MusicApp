@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:overScrollMode="never"
+    android:id="@+id/nestedScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_corner_top_round"
+    android:paddingVertical="@dimen/padding_16dp">
+
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <View
+            android:background="@drawable/corner_all_radius_gray"
+            android:layout_width="@dimen/width_46dp"
+            android:layout_height="@dimen/height_4dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/padding_16dp"
+            android:paddingVertical="@dimen/padding_12dp">
+
+            <TextView
+                android:text="@string/custom_sleep_timer"
+                style="@style/CustomTextStyle20spBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="@dimen/margin_8dp"
+            android:background="?attr/navLineItem" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/padding_24dp">
+
+            <com.cheonjaeung.powerwheelpicker.android.WheelPicker
+                android:id="@+id/hourWheelPicker"
+                android:layout_width="@dimen/width_50dp"
+                android:layout_height="@dimen/height_160dp"
+                android:orientation="vertical"
+                android:overScrollMode="never"
+                app:circular="true"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:selector_height="50dp" />
+
+            <TextView
+                style="@style/CustomTextHighlightStyle16spBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="@string/hour" />
+
+            <com.cheonjaeung.powerwheelpicker.android.WheelPicker
+                android:id="@+id/minuteWheelPicker"
+                android:layout_width="@dimen/width_50dp"
+                android:layout_height="@dimen/height_160dp"
+                android:orientation="vertical"
+                android:overScrollMode="never"
+                app:circular="true"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:selector_height="50dp" />
+
+            <TextView
+                style="@style/CustomTextHighlightStyle16spBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/minute" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/doneButton"
+            android:text="@string/done"
+            android:gravity="center"
+            style="@style/CustomTextStyle16sp"
+            android:textColor="@color/white"
+            android:background="@drawable/background_highlight_round"
+            android:layout_marginHorizontal="@dimen/margin_16dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_40dp"/>
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

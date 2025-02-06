@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_corner_top_round"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingVertical="@dimen/padding_12dp">
+
+    <View
+        android:background="@drawable/corner_all_radius_gray"
+        android:layout_width="@dimen/width_46dp"
+        android:layout_height="@dimen/height_4dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/padding_16dp"
+        android:paddingVertical="@dimen/padding_12dp">
+
+        <ImageView
+            android:id="@+id/imageInfo"
+            android:layout_width="@dimen/width_46dp"
+            android:layout_height="@dimen/height_46dp"
+            android:src="@drawable/icon_song"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <RelativeLayout
+            android:id="@+id/albumImage"
+            android:visibility="gone"
+            android:layout_width="@dimen/width_64dp"
+            android:layout_height="@dimen/height_46dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+            <ImageView
+                android:id="@+id/trackIcon"
+                android:layout_marginStart="-18dp"
+                android:src="@drawable/icon_playing_song"
+                android:layout_width="@dimen/width_60dp"
+                android:layout_height="@dimen/width_60dp"
+                android:layout_toEndOf="@+id/iconAlbumLayout"
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/iconAlbumLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="@dimen/width_46dp"
+                android:layout_height="@dimen/height_46dp">
+
+                <ImageView
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/icon_album"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"/>
+
+                <ImageView
+                    android:id="@+id/albumMoreIcon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/icon_details"
+                    android:layout_width="@dimen/margin_2dp"
+                    android:layout_height="@dimen/margin_2dp"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/infoDisplayLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="@dimen/margin_64dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/songName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                style="@style/CustomTextStyleMedium16sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/songArtist"
+                android:maxLines="1" />
+
+            <TextView
+                android:id="@+id/songArtist"
+                style="@style/CustomTextSongArtistStyle12sp"
+                android:text="@string/unknown_artist"
+                app:layout_constraintTop_toBottomOf="@id/songName"
+                app:layout_constraintStart_toStartOf="@id/songName"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginVertical="@dimen/margin_8dp"
+        android:background="?attr/navLineItem" />
+
+    <LinearLayout
+        android:id="@+id/layout_play"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:background="?android:selectableItemBackground"
+        android:paddingHorizontal="@dimen/padding_16dp"
+        android:paddingVertical="@dimen/padding_14dp">
+
+        <ImageView
+            android:layout_width="@dimen/width_36dp"
+            android:layout_height="@dimen/height_36dp"
+            android:padding="@dimen/padding_8dp"
+            android:src="@drawable/icon_highlight_play"
+            android:background="@drawable/gray_menu_item_bg"/>
+
+        <TextView
+            android:id="@+id/playSongTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_18dp"
+            android:text="@string/play_artist"
+            style="@style/CustomTextStyleMedium16sp"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_add_to_playing_queue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:background="?android:selectableItemBackground"
+        android:paddingHorizontal="@dimen/padding_16dp"
+        android:paddingVertical="@dimen/padding_14dp">
+
+        <ImageView
+            android:layout_width="@dimen/width_36dp"
+            android:layout_height="@dimen/height_36dp"
+            android:padding="@dimen/padding_8dp"
+            android:src="@drawable/icon_add_queue"
+           android:background="@drawable/gray_menu_item_bg"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_18dp"
+            android:text="@string/add_to_queue"
+            style="@style/CustomTextStyleMedium16sp"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_add_playlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:background="?android:selectableItemBackground"
+        android:paddingHorizontal="@dimen/padding_16dp"
+        android:paddingVertical="@dimen/padding_14dp">
+
+        <ImageView
+            android:layout_width="@dimen/width_36dp"
+            android:layout_height="@dimen/height_36dp"
+            android:padding="@dimen/padding_8dp"
+            android:src="@drawable/icon_add_to_playlist"
+           android:background="@drawable/gray_menu_item_bg"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_18dp"
+            android:text="@string/add_to_playlist"
+            style="@style/CustomTextStyleMedium16sp"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_rename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:background="?android:selectableItemBackground"
+        android:paddingHorizontal="@dimen/padding_16dp"
+        android:paddingVertical="@dimen/padding_14dp">
+
+        <ImageView
+            android:layout_width="@dimen/width_36dp"
+            android:layout_height="@dimen/height_36dp"
+            android:padding="@dimen/padding_8dp"
+            android:src="@drawable/icon_rename"
+           android:background="@drawable/gray_menu_item_bg"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_18dp"
+            android:text="@string/rename"
+            style="@style/CustomTextStyleMedium16sp"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/firstLine"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        android:layout_marginStart="@dimen/margin_54dp"
+        android:background="?attr/navLineItem" />
+
+
+    <View
+        android:id="@+id/secondLine"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        android:layout_marginStart="@dimen/margin_54dp"
+        android:background="?attr/navLineItem" />
+
+    <LinearLayout
+        android:id="@+id/layout_share"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:background="?android:selectableItemBackground"
+        android:paddingHorizontal="@dimen/padding_16dp"
+        android:paddingVertical="@dimen/padding_14dp">
+
+        <ImageView
+            android:layout_width="@dimen/width_36dp"
+            android:layout_height="@dimen/height_36dp"
+            android:padding="@dimen/padding_8dp"
+            android:src="@drawable/icon_share"
+           android:background="@drawable/gray_menu_item_bg"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_18dp"
+            android:text="@string/share"
+            style="@style/CustomTextStyleMedium16sp"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_delete_from_device"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:background="?android:selectableItemBackground"
+        android:paddingHorizontal="@dimen/padding_16dp"
+        android:paddingVertical="@dimen/padding_14dp">
+
+        <ImageView
+            android:layout_width="@dimen/width_36dp"
+            android:layout_height="@dimen/height_36dp"
+            android:padding="@dimen/padding_8dp"
+            android:src="@drawable/icon_trash"
+           android:background="@drawable/gray_menu_item_bg"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_18dp"
+            android:text="@string/delete_from_playlist"
+            style="@style/CustomTextStyleMedium16sp"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/clear_my_favourite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:selectableItemBackground"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/padding_16dp"
+        android:paddingVertical="@dimen/padding_14dp">
+
+        <ImageView
+            android:layout_width="@dimen/width_36dp"
+            android:layout_height="@dimen/height_36dp"
+            android:padding="@dimen/padding_8dp"
+            android:src="@drawable/icon_trash"
+            android:background="@drawable/gray_menu_item_bg"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_18dp"
+            android:text="@string/clear_my_favourite"
+            style="@style/CustomTextMediumStyle16sp"
+            android:textSize="16sp" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_corner_top_round"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingVertical="@dimen/padding_16dp">
+
+    <View
+        android:background="@drawable/corner_all_radius_gray"
+        android:layout_width="@dimen/width_46dp"
+        android:layout_height="@dimen/height_4dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/padding_16dp"
+        android:paddingVertical="@dimen/padding_12dp">
+
+        <TextView
+            android:text="@string/sleep_timer"
+            style="@style/CustomTextStyle20spBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/drawerDivineLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?attr/navLineItem" />
+
+    <RelativeLayout
+        android:id="@+id/turnOffOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/padding_16dp"
+        android:paddingVertical="@dimen/padding_14dp">
+
+        <TextView
+            android:id="@+id/turnOffTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/turn_off"
+            style="@style/CustomTextPurpleStyleMedium"
+            android:textColor="?attr/iconAnonymous"
+            android:textSize="16sp" />
+        
+        <ImageView
+            android:id="@+id/turnOffIcon"
+            android:src="@drawable/icon_added"
+            android:visibility="gone"
+            android:layout_alignParentEnd="true"
+            android:layout_width="@dimen/width_24dp"
+            android:layout_height="@dimen/height_24dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/tenMinuteOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/padding_16dp"
+        android:paddingVertical="@dimen/padding_14dp">
+
+        <TextView
+            android:id="@+id/tenMinuteTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_10_minutes_later"
+            style="@style/CustomTextPurpleStyleMedium"
+            android:textColor="?attr/iconAnonymous"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/tenMinuteIcon"
+            android:src="@drawable/icon_added"
+            android:visibility="gone"
+            android:layout_alignParentEnd="true"
+            android:layout_width="@dimen/width_24dp"
+            android:layout_height="@dimen/height_24dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/twentyMinuteOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/padding_16dp"
+        android:paddingVertical="@dimen/padding_14dp">
+
+        <TextView
+            android:id="@+id/twentyMinuteTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_20_minutes_later"
+            style="@style/CustomTextPurpleStyleMedium"
+            android:textColor="?attr/iconAnonymous"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/twentyMinuteIcon"
+            android:src="@drawable/icon_added"
+            android:visibility="gone"
+            android:layout_alignParentEnd="true"
+            android:layout_width="@dimen/width_24dp"
+            android:layout_height="@dimen/height_24dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/halfHourOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/padding_16dp"
+        android:paddingVertical="@dimen/padding_14dp">
+
+        <TextView
+            android:id="@+id/halfHourTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_30_minutes_later"
+            style="@style/CustomTextPurpleStyleMedium"
+            android:textColor="?attr/iconAnonymous"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/halfHourIcon"
+            android:src="@drawable/icon_added"
+            android:visibility="gone"
+            android:layout_alignParentEnd="true"
+            android:layout_width="@dimen/width_24dp"
+            android:layout_height="@dimen/height_24dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/oneHourOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/padding_16dp"
+        android:paddingVertical="@dimen/padding_14dp">
+
+        <TextView
+            android:id="@+id/oneHourTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_60_minutes_later"
+            style="@style/CustomTextPurpleStyleMedium"
+            android:textColor="?attr/iconAnonymous"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/oneHourIcon"
+            android:visibility="gone"
+            android:src="@drawable/icon_added"
+            android:layout_alignParentEnd="true"
+            android:layout_width="@dimen/width_24dp"
+            android:layout_height="@dimen/height_24dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/customSettingOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/padding_16dp"
+        android:paddingVertical="@dimen/padding_14dp">
+
+        <TextView
+            android:id="@+id/customSettingTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/custom"
+            style="@style/CustomTextPurpleStyleMedium"
+            android:textColor="?attr/iconAnonymous"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/customSettingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/set"
+            android:textColor="?attr/iconAnonymous"
+            android:layout_marginEnd="@dimen/margin_8dp"
+            android:layout_toStartOf="@id/customSettingIcon"
+            android:paddingVertical="@dimen/padding_2dp"
+            style="@style/CustomTextPurpleStyleMedium" />
+
+        <ImageView
+            android:id="@+id/customSettingIcon"
+            android:src="@drawable/icon_next"
+            android:layout_alignParentEnd="true"
+            android:layout_marginVertical="@dimen/padding_2dp"
+            android:layout_width="@dimen/width_24dp"
+            android:layout_height="@dimen/height_24dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

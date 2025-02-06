@@ -1,0 +1,16 @@
+int attr center_item_color 0x0
+int attr center_text_size 0x0
+int attr circular 0x0
+int attr other_item_color 0x0
+int attr selector_height 0x0
+int attr selector_width 0x0
+int id timeValueText 0x0
+int layout number_picker 0x0
+int[] styleable WheelPicker { 0x10100c4, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
+int styleable WheelPicker_android_orientation 0
+int styleable WheelPicker_center_item_color 1
+int styleable WheelPicker_center_text_size 2
+int styleable WheelPicker_circular 3
+int styleable WheelPicker_other_item_color 4
+int styleable WheelPicker_selector_height 5
+int styleable WheelPicker_selector_width 6

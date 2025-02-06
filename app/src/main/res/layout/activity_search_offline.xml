@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundPrimary">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/searchLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginEnd="@dimen/margin_8dp"
+        android:layout_marginTop="@dimen/margin_48dp"
+        android:gravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/searchBar"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height_40dp"
+            android:background="@drawable/corner_all_radius"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginEnd="@dimen/margin_8dp"
+            app:layout_constraintEnd_toStartOf="@+id/cancelButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <EditText
+                android:id="@+id/searchBarText"
+                style="@style/CustomTextStyle16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_12dp"
+                android:layout_marginEnd="@dimen/margin_12dp"
+                android:layout_weight="1"
+                android:textCursorDrawable="@drawable/color_cursor"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:textColor="?attr/textColor"
+                android:hint="@string/search_or_enter_key_word"
+                android:background="@null"
+                android:textColorHint="@color/search_bar_bg"/>
+
+            <ImageView
+                android:id="@+id/searchBarIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_10dp"
+                android:layout_marginEnd="@dimen/margin_2dp"
+                android:background="?android:selectableItemBackground"
+                android:src="@drawable/icon_search_purple" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_8dp"
+            android:text="@string/cancel"
+            android:background="?android:selectableItemBackground"
+            style="@style/CustomTextSongArtistStyle16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/divideLine"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="?attr/navLineItem"
+        android:layout_marginTop="@dimen/margin_12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchLayout" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divideLine"
+        app:layout_constraintBottom_toTopOf="@id/layout_mini_player"
+        android:layout_height="0dp" >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/downloadSongRV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/margin_16dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+
+    <ImageView
+        android:id="@+id/scrollToTop"
+        android:layout_width="@dimen/width_46dp"
+        android:layout_height="@dimen/height_46dp"
+        android:visibility="gone"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="@dimen/margin_24dp"
+        android:src="@drawable/icon_scroll_to_top"
+        app:layout_constraintBottom_toTopOf="@id/layout_mini_player"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <include
+        android:id="@+id/layout_mini_player"
+        layout="@layout/layout_mini_player"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

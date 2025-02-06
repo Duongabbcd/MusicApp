@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:selectableItemBackground"
+    android:paddingVertical="@dimen/margin_12dp">
+
+    <FrameLayout
+        android:id="@+id/frameSongIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/songIcon"
+            android:layout_width="@dimen/width_50dp"
+            android:layout_height="@dimen/height_50dp"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:src="@drawable/icon_song" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/favSongIcon"
+            android:layout_width="@dimen/width_50dp"
+            android:layout_height="@dimen/height_50dp"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:background="@drawable/icon_playlist_favourite">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_liked"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/playlistName"
+        style="@style/CustomTextSongNameStyle16spMedium"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_14dp"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintBottom_toTopOf="@id/playlistSongCount"
+        app:layout_constraintEnd_toStartOf="@id/playlistAdd"
+        app:layout_constraintStart_toEndOf="@id/frameSongIcon"
+        app:layout_constraintTop_toTopOf="@+id/frameSongIcon" />
+
+    <TextView
+        android:id="@+id/playlistSongCount"
+        style="@style/CustomTextSongArtistStyle12sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/playlistName"
+        app:layout_constraintTop_toBottomOf="@id/playlistName" />
+
+
+    <ImageView
+        android:id="@+id/playlistAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?android:selectableItemBackgroundBorderless"
+        android:layout_marginVertical="@dimen/margin_4dp"
+        android:padding="@dimen/padding_4dp"
+        android:layout_marginEnd="@dimen/margin_8dp"
+        android:src="@drawable/icon_add_to_playlist_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/playlistMoreFunctions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_4dp"
+        android:src="@drawable/icon_details"
+        android:layout_marginEnd="@dimen/margin_8dp"
+        android:visibility="gone"
+        android:background="?android:selectableItemBackgroundBorderless"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

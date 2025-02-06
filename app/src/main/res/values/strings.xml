@@ -1,0 +1,197 @@
+<resources>
+    <string name="app_name">MusicApp</string>
+    <string name="music_downloader">Music Downloader</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="default_language">Default</string>
+
+
+    <!--    Base Fragment-->
+    <string name="home">Home</string>
+    <string name="download">Download</string>
+    <string name="album">Album</string>
+    <string name="file_path">File path</string>
+    <string name="artist">Artist</string>
+    <string name="song">Song</string>
+
+    <string name="search_music">Search music</string>
+    <string name="my_music">My music</string>
+    <string name="my_playlist">Playlist</string>
+    <string name="all_files">Files</string>
+    <string name="sleep_timer">Sleep Timer</string>
+    <string name="rate_app">Rate App</string>
+    <string name="setting">Settings</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="search_music_online">Search music online…</string>
+    <string name="search">Search…</string>
+    <string name="cancel">Cancel</string>
+    <string name="exit">Exit</string>
+    <string name="do_you_want_to_exit_app">Do you want to exit app?</string>
+    <string name="exit_app">Exit App</string>
+    <string name="unknown_artist">Unknown Artist</string>
+    <string name="unknown_song">Unknown Song</string>
+    <string name="delete_from_device">Delete from device</string>
+    <string name="delete_from_playlist">Delete playlist</string>
+    <string name="remove_from_playlist">Remove from playlist</string>
+    <string name="remove_from_playing_queue">Remove song</string>
+    <string name="share">Share</string>
+    <string name="more_from_artist">More from artist</string>
+    <string name="more_from_album">More from album</string>
+    <string name="rename">Rename</string>
+    <string name="add_to_playlist">Add to playlist</string>
+    <string name="add_to_queue">Add to queue</string>
+    <string name="no_song_founds">No song founds</string>
+
+    <string name="play_all">Play All</string>
+    <string name="play_song">Play song</string>
+    <string name="play_album">Play album</string>
+    <string name="play_artist">Play</string>
+
+    <string name="ok">OK</string>
+    <string name="clear">Clear</string>
+    <string name="delete">Delete</string>
+    <string name="remove">Remove</string>
+    <string name="use">Use</string>
+    <string name="using">Using</string>
+    <string name="use_now">Use now</string>
+
+    <!--    playlist-->
+    <string name="playlist">Playlist</string>
+    <string name="create_new_playlist">Create New Playlist</string>
+    <string name="rename_playlist">Rename Playlist</string>
+    <string name="enter_playlist_name">Enter playlist name</string>
+    <string name="playlist_song_added_before">Theses songs have been added before!</string>
+    <string name="playlist_added_successfully">Added successfully!</string>
+
+    <!--    audio-->
+    <string name="audio">Audio</string>
+    <string name="rename_audio">Rename Audio</string>
+    <string name="enter_audio_name">Enter audio name</string>
+
+    <!--    dialog-->
+    <string name="title_must_be_not_empty">Title must not be empty</string>
+    <string name="title_is_exist">Title is exist</string>
+
+    <string name="do_you_want_delete">Do you want delete %1$s</string>
+    <string name="add_song_success">Add song success</string>
+    <string name="add_song">Add Song</string>
+    <string name="add_songs">Add songs</string>
+    <string name="add_songs_now">Add songs now</string>
+
+    <!--    delete dialog-->
+    <string name="delete_queue">Clear Queue</string>
+    <string name="delete_artist">Delete Artist</string>
+    <string name="delete_album">Delete Album</string>
+    <string name="delete_song">Delete Song</string>
+    <string name="delete_file">Delete File?</string>
+    <string name="delete_playlist">Delete Playlist</string>
+
+    <string name="delete_queue_question">Are you sure you want to clear the queue?</string>
+    <string name="delete_artist_question">Are you sure you want to delete the artist?</string>
+    <string name="delete_album_question">Are you sure you want to delete the album?</string>
+    <string name="delete_audio_from_playlist">Are you sure you want to remove &quot;%1$s&quot;?</string>
+    <string name="delete_audio_question">Delete the file %1$s</string>
+    <string name="delete_playlist_question">Do you want to delete playlist %1$s</string>
+    <string name="delete_favourite_playlist_question">Do you want to clear %1$s</string>
+    <!--    sort dialog-->
+    <string name="sort_by">Sort by</string>
+    <string name="title">Title</string>
+    <string name="date">Date</string>
+    <string name="duration">Duration</string>
+    <string name="size">Size</string>
+    <string name="search_playlist">Search playlist…</string>
+    <string name="add_song_now">Add song now</string>
+    <string name="_10_minutes_later">10 minutes later</string>
+    <string name="turn_off">Turn off</string>
+    <string name="_20_minutes_later">20 minutes later</string>
+    <string name="_30_minutes_later">30 minutes later</string>
+    <string name="_60_minutes_later">60 minutes later</string>
+    <string name="custom">Custom</string>
+    <string name="set">Set</string>
+    <string name="done">Done</string>
+
+    <!--    sort order options-->
+    <string name="largest">Largest</string>
+    <string name="smallest">Smallest</string>
+    <string name="shortest">Shortest</string>
+    <string name="longest">Longest</string>
+    <string name="oldest">Oldest</string>
+    <string name="newest">Newest</string>
+    <string name="z_to_a">Z to A</string>
+    <string name="a_to_z">A to Z</string>
+    <string name="settings">Settings</string>
+    <string name="language">Language</string>
+
+    <!--    setting-->
+    <string name="app_theme_title">App Themes</string>
+    <string name="app_theme_sub_title">Light / Dark / System</string>
+    <string name="language_title">Languages</string>
+    <string name="language_sub_title">Device</string>
+    <string name="share_app_title">Share app</string>
+    <string name="share_app_sub_title">Share to …</string>
+    <string name="rating_app_title">Rating app</string>
+    <string name="rating_app_sub_title">Rate  now</string>
+    <string name="download_path">Download Path</string>
+    <string name="full_screen">Full Screen</string>
+    <string name="version">Version:</string>
+    <string name="new_playlist">New playlist</string>
+    <string name="file_information">File information</string>
+    <string name="light_mode">Light Mode</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="system">System</string>
+    <string name="search_or_enter_key_word">Search or enter key word</string>
+    <string name="up_next">Up next</string>
+    <string name="playing_queue">Playing Queue</string>
+    <string name="shuffle">Shuffle</string>
+    <string name="custom_sleep_timer">Custom sleep timer</string>
+    <string name="genres">Genres</string>
+    <string name="minute">Minute</string>
+    <string name="hour">Hour</string>
+    <string name="getting_ready">Getting ready…</string>
+
+    <!-- Language question-->
+    <string name="change_language">Change Language</string>
+    <string name="change_language_question">Do you want to change language to %1$s?</string>
+    <string name="clear_my_favourite">Clear My Favourite</string>
+
+    <!--    Download song-->
+    <string name="download_song_notification">Downloading %1$s</string>
+    <string name="download_song_conclusion">Downloaded successfully!</string>
+    <string name="downloading_song">The song is downloading, please wait…</string>
+
+    <!--    Equalizer-->
+    <string name="equalizer_is_not_available">Equalizer is not available</string>
+
+    <!--    text in case-->
+    <plurals name="song_count">
+        <item quantity="one">%d song</item>
+        <item quantity="zero">%d song</item>
+        <item quantity="other">%d songs</item>
+    </plurals>
+
+    <plurals name="album_count">
+        <item quantity="zero">%d album</item>
+        <item quantity="one">%d album</item>
+        <item quantity="other">%d albums</item>
+    </plurals>
+
+    <plurals name="artist_count">
+        <item quantity="zero">%d artist</item>
+        <item quantity="one">%d artist</item>
+        <item quantity="other">%d artists</item>
+    </plurals>
+
+    <plurals name="playing_song_queue">
+        <item quantity="zero">%d/%d song</item>
+        <item quantity="one">%d/%d song</item>
+        <item quantity="other">%d/%d songs</item>
+    </plurals>
+
+    <plurals name="song_selected">
+        <item quantity="one">%d song selected</item>
+        <item quantity="zero">%d song selected</item>
+        <item quantity="other">%d songs selected</item>
+    </plurals>
+
+
+</resources>

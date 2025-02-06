@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/margin_12dp">
+
+
+    <TextView
+        android:id="@+id/songName"
+        style="@style/CustomGiantTextStyle28sp"
+        android:layout_width="0dp"
+        android:text="@string/playing_queue"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_14dp"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/songArtist"
+        style="@style/CustomTextSongArtistStyle12sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_12dp"
+        android:text="@string/up_next"
+        app:layout_constraintStart_toStartOf="@id/songName"
+        app:layout_constraintTop_toBottomOf="@id/songName" />
+
+    <ImageView
+        android:id="@+id/songDot"
+        android:layout_width="@dimen/width_4dp"
+        android:layout_height="@dimen/height_4dp"
+        android:layout_marginHorizontal="@dimen/margin_8dp"
+        android:src="@drawable/icon_dot"
+        app:layout_constraintBottom_toBottomOf="@id/songArtist"
+        app:layout_constraintStart_toEndOf="@id/songArtist"
+        app:layout_constraintTop_toTopOf="@id/songArtist" />
+
+    <TextView
+        android:id="@+id/playingCurrentTrack"
+        style="@style/CustomTextSongArtistStyle12sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_8dp"
+        android:layout_marginTop="@dimen/margin_12dp"
+        app:layout_constraintStart_toEndOf="@id/songDot"
+        app:layout_constraintTop_toBottomOf="@id/songName" />
+
+    <ImageView
+        android:id="@+id/playingShuffle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_12dp"
+        android:src="@drawable/icon_gray_shuffle"
+        android:background="?android:selectableItemBackgroundBorderless"
+        app:layout_constraintBottom_toBottomOf="@id/playingCurrentTrack"
+        app:layout_constraintEnd_toStartOf="@id/playingDelete"
+        app:layout_constraintTop_toTopOf="@id/playingCurrentTrack" />
+
+
+    <ImageView
+        android:id="@+id/playingDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_12dp"
+        android:layout_marginEnd="@dimen/margin_10dp"
+        android:src="@drawable/icon_gray_trash"
+        android:background="?android:selectableItemBackgroundBorderless"
+        app:layout_constraintBottom_toBottomOf="@id/playingCurrentTrack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/playingCurrentTrack" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

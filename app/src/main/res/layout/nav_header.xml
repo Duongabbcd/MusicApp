@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/gradientLayout"
+    android:layout_width="match_parent"
+    android:layout_height="170dp"
+    android:background="?attr/backgroundPrimary"
+    android:paddingBottom="24dp"
+    android:paddingStart="16dp">
+
+    <ImageView
+        android:id="@+id/iconApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/icon_app"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:layout_marginStart="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="?attr/textColor"
+        android:text="@string/music_downloader"
+        app:layout_constraintStart_toEndOf="@id/iconApp"
+        app:layout_constraintTop_toTopOf="@id/iconApp"
+        app:layout_constraintBottom_toBottomOf="@id/iconApp"
+        android:layout_marginLeft="16dp"
+        android:textSize="18sp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
