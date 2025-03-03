@@ -30,15 +30,18 @@ class PlayingQueueActivity :
     BaseActivity<ActivityPlayingQueueBinding>(ActivityPlayingQueueBinding::inflate) {
     private val playingAdapter = SongPlayingAdapter()
     private val listDataSong = mutableListOf<Any>()
+
+    private var isOnTop = false
     private val broadcastChange = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent) {
             val action = intent.action
+            println("onReceive: $action")
             if (action == MusicService.PLAY_STATE_CHANGED.replace(
                     MusicService.MUSIC_PLAYER_PACKAGE_NAME, MusicService.MUSIC_PACKAGE_NAME
                 ) || action == Utils.ACTION_FINISH_DOWNLOAD
             ) {
                 reloadData()
-                displaySummaryPlayingQueue()
+                displaySummaryPlayingQueue(isOnTop)
                 playingAdapter.notifyDataSetChanged()
             }
         }
@@ -80,7 +83,7 @@ class PlayingQueueActivity :
         super.onCreate(savedInstanceState)
         val currentSong = MusicPlayerRemote.getCurrentSong()
         println("PlayingQueueActivity: ${MusicPlayerRemote.getCurrentSong().mediaObject?.title}")
-        displaySummaryPlayingQueue()
+        displaySummaryPlayingQueue(isInitial = isOnTop)
         reloadData()
         checkShuffle()
         binding.playingQueueSongName.text = currentSong.mediaObject?.title ?: ""
@@ -121,7 +124,7 @@ class PlayingQueueActivity :
         }
     }
 
-    private fun displaySummaryPlayingQueue() {
+    private fun displaySummaryPlayingQueue(isInitial: Boolean = false) {
         binding.summaryLine.apply {
             val listSong = MusicPlayerRemote.getPlayingQueue()
             if(listSong.isEmpty()) {
@@ -141,9 +144,12 @@ class PlayingQueueActivity :
             playingShuffle.setOnClickListener {
                 MusicPlayerRemote.toggleShuffleMode()
                 checkShuffle()
-                playingAdapter.updateData(MusicPlayerRemote.getPlayingQueue())
+                val x: ArrayList<Any> = MusicPlayerRemote.getPlayingQueue()
+                println("displaySummaryPlayingQueue: ${x.first()}")
+                playingAdapter.updateData(x)
             }
-            val currentSongIndex = listSong.indexOf(MusicPlayerRemote.getCurrentSong()) + 1
+            val currentSongIndex = if(isInitial) 1 else
+                listSong.indexOf(MusicPlayerRemote.getCurrentSong()) + 1
             val totalSongs = listSong.size
             val quantityString =
                 this@PlayingQueueActivity.resources.getQuantityString(
@@ -157,9 +163,13 @@ class PlayingQueueActivity :
     private fun checkShuffle() {
         val shuffleMode = MusicPlayerRemote.getShuffleMode()
         val resource = if(shuffleMode == SHUFFLE_MODE_NONE)
-            R.drawable.icon_gray_shuffle
-        else R.drawable.icon_highlight_shuffle
-        binding.summaryLine.playingShuffle.setImageResource(resource)
+            R.drawable.icon_gray_shuffle.also { isOnTop = false }
+        else R.drawable.icon_highlight_shuffle.also { isOnTop = true }
+        binding.summaryLine.playingShuffle.setImageResource(resource).also {
+            sendBroadcast(Intent(MusicService.PLAY_STATE_CHANGED.replace(
+                MusicService.MUSIC_PLAYER_PACKAGE_NAME, MusicService.MUSIC_PACKAGE_NAME
+            )) )
+        }
     }
 
     override fun onStop() {
@@ -186,6 +196,7 @@ class PlayingQueueActivity :
         ): Boolean {
             val fromPosition = viewHolder.adapterPosition
             val toPosition = target.adapterPosition
+            println("fromPosition: $fromPosition and $toPosition" )
             adapter.notifyItemMoved(fromPosition, toPosition)
             MusicPlayerRemote.moveSong(fromPosition, toPosition)
             return true
@@ -196,6 +207,7 @@ class PlayingQueueActivity :
             try {
                 if (!recyclerView.isComputingLayout && !recyclerView.isAnimating) {
                     playingAdapter.updateData(MusicPlayerRemote.getPlayingQueue())
+                    displaySummaryPlayingQueue(isOnTop)
                 }
             } catch (ex: Exception) {
                 ex.printStackTrace()
@@ -203,7 +215,7 @@ class PlayingQueueActivity :
         }
 
         override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-            TODO("Not yet implemented")
+
         }
     }
 

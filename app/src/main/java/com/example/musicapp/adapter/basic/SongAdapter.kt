@@ -89,29 +89,33 @@ class SongAdapter(
     }
 
     private fun getItemByPosition(position: Int): Int {
-        return when (displayMode) {
-            in listOf(
-                DisplayMode.ARTIST,
-                DisplayMode.ALBUM,
-            ) -> {
-                position - 1
-            }
+        return if(isDownloadSong) {
+            position
+        } else {
+            when (displayMode) {
+                in listOf(
+                    DisplayMode.ARTIST,
+                    DisplayMode.ALBUM,
+                ) -> {
+                    position - 1
+                }
 
-            DisplayMode.AUDIO -> {
-                position - 2
+                DisplayMode.AUDIO -> {
+                    position - 2
 
-            }
+                }
 
-            else -> {
-                position
+                else -> {
+                    position
+                }
             }
         }
 
     }
 
     override fun getItemViewType(position: Int): Int {
-        return if ((displayMode in listOf(DisplayMode.ARTIST, DisplayMode.ALBUM) && position == 0)
-            || (displayMode == DisplayMode.AUDIO && position in listOf(0, 1))
+        return if ((displayMode in listOf(DisplayMode.ARTIST, DisplayMode.ALBUM) && position == 0) ||
+            (displayMode == DisplayMode.AUDIO && position in listOf(0, 1)) && !isDownloadSong
         ) {
             SongPlayingAdapter.TYPE_HEADER
         } else SongPlayingAdapter.TYPE_SONG
@@ -122,22 +126,26 @@ class SongAdapter(
 
 
     private fun getSize(): Int {
-        return when (displayMode) {
-            in listOf(
-                DisplayMode.ARTIST,
-                DisplayMode.ALBUM
-            )
-            -> {
-                items.size + 1
-            }
+        return if(isDownloadSong) {
+            items.size
+        } else {
+            when (displayMode) {
+                in listOf(
+                    DisplayMode.ARTIST,
+                    DisplayMode.ALBUM
+                )
+                -> {
+                    items.size + 1
+                }
 
-            DisplayMode.AUDIO -> {
-                items.size + 2
-            }
+                DisplayMode.AUDIO -> {
+                    items.size + 2
+                }
 
-            else -> {
-                items.size
+                else -> {
+                    items.size
 
+                }
             }
         }
     }
@@ -221,7 +229,7 @@ class SongAdapter(
 
             binding.apply {
                 albumSort.setOnClickListener {
-                    val dialogName = SortAudioDialog(context)
+                    val dialogName = SortAudioDialog(context, isDownloadSong)
                     dialogName.show()
                 }
                 playAllButton.setOnClickListener {

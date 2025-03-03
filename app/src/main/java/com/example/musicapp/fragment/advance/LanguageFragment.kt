@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.musicapp.R
+import com.example.musicapp.activity.basic.SettingActivity
 import com.example.musicapp.adapter.advance.LanguageAdapter
 import com.example.musicapp.adapter.advance.LanguageItem
 import com.example.musicapp.base.BaseFragment
@@ -44,5 +45,10 @@ class LanguageFragment: BaseFragment<FragmentLanguageBinding>(FragmentLanguageBi
         return PreferenceUtil.getInstance(requireContext())?.getLanguage()
             ?.let { LanguageItem(it, "") }
             ?: LanguageItem("","")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        SettingActivity.position = 2
     }
 }

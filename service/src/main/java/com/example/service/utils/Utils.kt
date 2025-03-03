@@ -4,10 +4,13 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.media.MediaScannerConnection
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.net.Uri
 import android.os.Build
 import android.os.Environment
 import android.provider.MediaStore
+import android.telephony.TelephonyManager
 import java.io.File
 import java.text.DecimalFormat
 import java.util.Locale
@@ -73,16 +76,20 @@ object Utils {
     }
 
     fun shareVideoOrAudio(context: Context, title: String?, path: String?) {
-        MediaScannerConnection.scanFile(context, arrayOf(path), null) { _: String, uri: Uri ->
-            val shareIntent = Intent(Intent.ACTION_SEND)
-            shareIntent.setType("*/*")
-            shareIntent.putExtra(Intent.EXTRA_SUBJECT, title)
-            shareIntent.putExtra(Intent.EXTRA_TITLE, title)
-            shareIntent.putExtra(Intent.EXTRA_STREAM, uri)
-            shareIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET)
-            if (context is Activity) {
-                context.startActivity(Intent.createChooser(shareIntent, null))
+        try {
+            MediaScannerConnection.scanFile(context, arrayOf(path), null) { _: String, uri: Uri ->
+                val shareIntent = Intent(Intent.ACTION_SEND)
+                shareIntent.setType("*/*")
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT, title)
+                shareIntent.putExtra(Intent.EXTRA_TITLE, title)
+                shareIntent.putExtra(Intent.EXTRA_STREAM, uri)
+                shareIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET)
+                if (context is Activity) {
+                    context.startActivity(Intent.createChooser(shareIntent, null))
+                }
             }
+        } catch(e: Exception) {
+            e.printStackTrace()
         }
     }
 
@@ -103,6 +110,46 @@ object Utils {
 
         if (context is Activity) {
             context.startActivity(Intent.createChooser(shareIntent, "Share audio file by"))
+        }
+    }
+
+    fun checkForInternet(context: Context): Boolean {
+
+        // register activity with the connectivity manager service
+        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+
+        // if the android version is equal to M
+        // or greater we need to use the
+        // NetworkCapabilities to check what type of
+        // network has the internet connection
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+
+            // Returns a Network object corresponding to
+            // the currently active default data network.
+            println("activeNetwork 0: ${connectivityManager.activeNetwork} ")
+            val network = connectivityManager.activeNetwork ?: return false
+            println("activeNetwork 1: ${connectivityManager.getNetworkCapabilities(network)}")
+            // Representation of the capabilities of an active network.
+            val activeNetwork = connectivityManager.getNetworkCapabilities(network) ?: return false
+
+            return when {
+                // Indicates this network uses a Wi-Fi transport,
+                // or WiFi has network connectivity
+                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
+
+                // Indicates this network uses a Cellular transport. or
+                // Cellular has network connectivity
+                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
+
+                // else return false
+                else -> false
+            }
+        } else {
+            // if the android version is below M
+            @Suppress("DEPRECATION") val networkInfo =
+                connectivityManager.activeNetworkInfo ?: return false
+            @Suppress("DEPRECATION")
+            return networkInfo.isConnected
         }
     }
 

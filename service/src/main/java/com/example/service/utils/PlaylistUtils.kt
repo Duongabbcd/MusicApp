@@ -33,21 +33,24 @@ class PlaylistUtils(private val context: Context) {
      * @param audio  the audio file will be added into playlist.
      * @param playlist playlist.
      */
-    fun addSongToPlaylist(audio: Audio?, playlist: Playlist?) {
+    fun addSongToPlaylist(audio: Audio?, playlist: Playlist?): Boolean {
         try {
             playlist?.tracks?.let {
                 for (i in 0 until it.size) {
                     if (playlist.tracks[i] == audio) {
-                        playlist.tracks.removeAt(i)
+                        return false
                     }
                 }
                 playlist.tracks.add(audio!!)
                 CoroutineScope(Dispatchers.IO).launch {
                     playlistDao.updatePlaylist(playlist)
                 }
+                return true
             }
+            return false
         } catch (ex: Exception) {
             ex.printStackTrace()
+            return false
         }
     }
 

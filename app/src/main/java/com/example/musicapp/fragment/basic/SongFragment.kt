@@ -53,7 +53,7 @@ class SongFragment : BaseFragment<FragmentSongBinding>(FragmentSongBinding::infl
             if (action == Utils.ACTION_FINISH_DOWNLOAD) {
                 CoroutineScope(Dispatchers.Main).launch {
                     delay(100)
-                    reloadData()
+                    reloadData(true)
                 }
             }
         }
@@ -62,11 +62,9 @@ class SongFragment : BaseFragment<FragmentSongBinding>(FragmentSongBinding::infl
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        reloadData()
+        reloadData(false)
         binding.apply {
-            swipeRefreshLayout.setOnRefreshListener {
-                reloadData()
-            }
+
             allSongsRV.apply {
                 layoutManager = LinearLayoutManager(requireContext())
                 itemAnimator = null
@@ -74,7 +72,7 @@ class SongFragment : BaseFragment<FragmentSongBinding>(FragmentSongBinding::infl
 
             }
             swipeRefreshLayout.setOnRefreshListener {
-                reloadData()
+                reloadData(true)
             }
 
             setUpDisplayList()
@@ -135,16 +133,16 @@ class SongFragment : BaseFragment<FragmentSongBinding>(FragmentSongBinding::infl
 
     override fun onResume() {
         super.onResume()
-        reloadData()
+        reloadData(false)
         songAdapter.notifyItemRangeChanged(1, listDataSong.size - 1)
     }
 
-    override fun reloadData() {
+    override fun reloadData(isLoading: Boolean) {
         if (MainActivity.isChangeTheme) {
             return
         }
 
-        binding.swipeRefreshLayout.isRefreshing = true
+        binding.swipeRefreshLayout.isRefreshing = isLoading
         CoroutineScope(Dispatchers.IO).launch {
             val listSong = SongLoader.getAllSongs(requireContext())
             listDataSong.clear()

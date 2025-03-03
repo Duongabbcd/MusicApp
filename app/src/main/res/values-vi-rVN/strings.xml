@@ -60,7 +60,8 @@
     <string name="playlist">Danh sách phát</string>
     <string name="create_new_playlist">Tạo danh sách mới</string>
     <string name="rename_playlist">Đổi tên danh sách</string>
-    <string name="enter_playlist_name">Điền tên</string>
+    <string name="enter_playlist_name">Điền tên</string>g>
+    <string name="song_added_before">Bbài hát này đã có trong danh sách phát!</string>
     <string name="playlist_song_added_before">Những bài hát này đã có trong danh sách phát!</string>
     <string name="playlist_added_successfully">Thêm thành công!</string>
 
@@ -162,6 +163,13 @@
     <string name="download_song_notification">Đang tải %1$s</string>
     <string name="download_song_conclusion">Tải thành công!</string>
     <string name="downloading_song">Bài hát đang được tải, hãy chờ trong chốc lát…</string>
+
+    <string name="no_result_found">Không tìm thấy</string>
+    <string name="search_other_content">Xin hãy tìm kiếm nội dung khác.</string>
+
+    <string name="no_internet">Mất mạng</string>
+    <string name="lost_connection">Đã mất kết nối! Xin kiểm tra lại đường truyền</string>
+
 
     <!--    text in case-->
     <plurals name="song_count">

@@ -49,7 +49,7 @@ class AlbumFragment : BaseFragment<FragmentAlbumBinding>(FragmentAlbumBinding::i
                 adapter.notifyItemRangeChanged(2, albumList.size - 1)
             }
             if (action == Utils.ACTION_FINISH_DOWNLOAD) {
-                reloadData()
+                reloadData(true)
             }
         }
 
@@ -57,10 +57,10 @@ class AlbumFragment : BaseFragment<FragmentAlbumBinding>(FragmentAlbumBinding::i
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        reloadData()
+        reloadData(false)
         binding.apply {
             layoutRefresh.setOnRefreshListener {
-                reloadData()
+                reloadData(true)
             }
             allAlbums.layoutManager = GridLayoutManager(requireContext(), 2)
 
@@ -85,12 +85,12 @@ class AlbumFragment : BaseFragment<FragmentAlbumBinding>(FragmentAlbumBinding::i
 
     }
 
-    override fun reloadData() {
+    override fun reloadData(isLoading: Boolean) {
         if (MainActivity.isChangeTheme) {
             return
         }
 
-        binding.layoutRefresh.isRefreshing = true
+        binding.layoutRefresh.isRefreshing = isLoading
         CoroutineScope(Dispatchers.IO).launch {
             albumList.clear()
             val allAlbums = SongLoader.getAlbumLocal(requireContext())

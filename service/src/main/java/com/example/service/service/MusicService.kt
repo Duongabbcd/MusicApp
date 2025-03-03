@@ -19,7 +19,6 @@ import android.os.CountDownTimer
 import android.os.Handler
 import android.os.HandlerThread
 import android.os.IBinder
-import android.os.Looper
 import android.os.Message
 import android.os.PowerManager
 import android.os.Process
@@ -127,7 +126,7 @@ class MusicService : Service(), SharedPreferences.OnSharedPreferenceChangeListen
         queueSaveHandlerThread =
             HandlerThread("QueueSaveHandler", Process.THREAD_PRIORITY_BACKGROUND)
         queueSaveHandlerThread.start()
-        queueSaveHandler = QueueSaveHandler(this, queueSaveHandlerThread.looper)
+        queueSaveHandler = QueueSaveHandler()
 
         uiThreadHandler = Handler()
 
@@ -292,9 +291,10 @@ class MusicService : Service(), SharedPreferences.OnSharedPreferenceChangeListen
 
             if (entityExits != null) {
                 val isPlaying = entityExits.mediaObject?.path == getCurrentSong().mediaObject?.path
-                getPlayingQueue().remove(entityExits).also {
-                    rePosition(deletedPosition)
-                }
+                currentList.remove(entityExits)
+                originalPlayingQueue = currentList
+                println("originalPlayingQueue: ${originalPlayingQueue!!.first()}")
+                rePosition(deletedPosition)
                 if (isPlaying) {
                     if (position >= getPlayingQueue().size) {
                         playSongAt(0)
@@ -309,7 +309,7 @@ class MusicService : Service(), SharedPreferences.OnSharedPreferenceChangeListen
         }
     }
 
-    private class QueueSaveHandler(service: MusicService, looper: Looper) : Handler() {
+    private class QueueSaveHandler() : Handler() {
         private var mService: WeakReference<MusicService>? = null
 
         override fun handleMessage(msg: Message) {
@@ -552,6 +552,7 @@ class MusicService : Service(), SharedPreferences.OnSharedPreferenceChangeListen
     }
 
     fun getCurrentSong(): Audio {
+        println("getCurrentSong: ${getPosition()}")
         return getSongAt(getPosition())
     }
 
@@ -653,21 +654,9 @@ class MusicService : Service(), SharedPreferences.OnSharedPreferenceChangeListen
         listRecently.add(0, currentSong)
     }
 
-    fun addSong(position: Int, song: Audio) {
-        playingQueue.add(position, song)
-        originalPlayingQueue?.add(position, song)
-        notifyChange(QUEUE_CHANGED)
-    }
-
     fun addSong(song: Audio) {
         playingQueue.add(song)
         originalPlayingQueue?.add(song)
-        notifyChange(QUEUE_CHANGED)
-    }
-
-    fun addSongs(position: Int, songs: List<Any>) {
-        playingQueue.addAll(position, songs)
-        originalPlayingQueue?.addAll(position, songs)
         notifyChange(QUEUE_CHANGED)
     }
 
@@ -697,7 +686,6 @@ class MusicService : Service(), SharedPreferences.OnSharedPreferenceChangeListen
                 rePosition(i)
             }
         }
-
         originalPlayingQueue?.let {
             for (i in 0 until it.size) {
                 if ((it[i] as Audio).mediaObject?.id == song.mediaObject?.id) {
@@ -911,6 +899,7 @@ class MusicService : Service(), SharedPreferences.OnSharedPreferenceChangeListen
 
             SHUFFLE_MODE_NONE -> {
                 this.shuffleMode = shuffleMode
+               println("originalPlayingQueue: ${originalPlayingQueue?.first()}")
                 playingQueue = ArrayList(originalPlayingQueue)
                 var newPosition = 0
                 val selectedSong = if(currentAudio == Audio.EMPTY_SONG) getCurrentSong() else currentAudio
@@ -1261,7 +1250,7 @@ class MusicService : Service(), SharedPreferences.OnSharedPreferenceChangeListen
         playback?.setWakeMode(PowerManager.PARTIAL_WAKE_LOCK)
 
         if (!TextUtils.isEmpty(MusicPlayerRemote.getCurrentSong().mediaObject?.path)
-            && audio.mediaObject?.path?.startsWith("http")!!
+            || audio.mediaObject?.path?.startsWith("http")!!
         ) {
             MusicPlayerRemote.playNextSong()
         }

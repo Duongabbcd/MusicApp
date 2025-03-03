@@ -31,7 +31,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class AlbumActivity: BaseActivity<ActivityAlbumBinding>(ActivityAlbumBinding::inflate) {
-    private val albumAdapter = AlbumLineAdapter(displayMode = DisplayMode.ALBUM) {
+    private val albumAdapter = AlbumLineAdapter(displayMode = DisplayMode.AUDIO) {
 
     }
     private val listData = mutableListOf<Audio>()

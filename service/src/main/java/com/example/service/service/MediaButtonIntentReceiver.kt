@@ -56,7 +56,7 @@ class MediaButtonIntentReceiver : BroadcastReceiver() {
             val eventTime =
                 if (event.eventTime != 0L) event.eventTime else System.currentTimeMillis()
             // Fallback to system time if event time was not available.
-            var command = when (keyCode) {
+            val command = when (keyCode) {
                 KeyEvent.KEYCODE_MEDIA_STOP -> {
                     MusicService.ACTION_STOP
                 }

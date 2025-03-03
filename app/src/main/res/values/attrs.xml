@@ -42,4 +42,5 @@
     <attr name="iconAlbumSquare" format="reference"/>
     <attr name="fastScrollBackground" format="color"/>
     <attr name="fastScrollTextColor" format="color"/>
+    <attr name="topHeaderBackground" format="reference"/>
 </resources>

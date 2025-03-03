@@ -130,7 +130,9 @@ class PlayingNotificationImpl24 : PlayingNotification() {
                     if (stopped) return // notification has been stopped before loading was finished
 
                     updateNotifyModeAndPostNotification(builder.build())
-                }}).submit()}
+                }
+            }).submit()
+        }
     }
 
     private fun retrievePlaybackAction(action: String): PendingIntent {

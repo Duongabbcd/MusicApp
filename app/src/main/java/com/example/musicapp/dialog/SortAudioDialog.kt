@@ -14,10 +14,13 @@ import com.example.service.utils.PreferenceUtil
 import com.example.musicapp.util.Utils
 import com.example.musicapp.util.Utils.getColorFromAttr
 
-class SortAudioDialog(context: Context) :
+class SortAudioDialog(context: Context, isDownloading: Boolean = false) :
     Dialog(context) {
     private val binding by lazy { DialogSortBinding.inflate(layoutInflater) }
-    private val sortOrder = PreferenceUtil.getInstance(context)?.getSongSortOrder() ?: ""
+    private val sortOrder =
+        if(isDownloading) Constant.ODER_SORT_DATE_ADD_DESC else
+            PreferenceUtil.getInstance(context)?.getSongSortOrder() ?: Constant.ODER_SORT_FILE_DEFAULT
+
     private var songSortOrder =
         PreferenceUtil.getInstance(context)?.getSongSortOrder() ?: Constant.ODER_SORT_FILE_DEFAULT
     

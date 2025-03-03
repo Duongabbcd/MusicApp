@@ -26,16 +26,23 @@ class BottomSheetAddPlaylist(context: Context) : BottomSheetDialog(context) {
         CoroutineScope(Dispatchers.IO).launch {
             val playlist = PlaylistUtils.getInstance(context)?.getPlaylistById(it)
             println("BottomSheetAddPlaylist: $it $playlist")
+            var x = true
             if (dataList.isEmpty()) {
-                PlaylistUtils.getInstance(context)?.addSongToPlaylist(audio, playlist)
+                x = PlaylistUtils.getInstance(context)?.addSongToPlaylist(audio, playlist) ?: false
             } else {
                 PlaylistUtils.getInstance(context)
                     ?.addListSongToPlaylistOne(dataList, playlist)
             }
             withContext(Dispatchers.Main) {
-                MDManager.getInstance(context)?.showMessage(
-                    context, context.getString(R.string.add_song_success)
-                )
+               if(x) {
+                   MDManager.getInstance(context)?.showMessage(
+                       context, context.getString(R.string.add_song_success)
+                   )
+               } else {
+                   MDManager.getInstance(context)?.showMessage(
+                       context, context.getString(R.string.song_added_before)
+                   )
+               }
                 context.sendBroadcast(Intent(PlaylistActivity.ACTION_UPDATE_DATA_PLAYLIST))
                 dismiss()
             }

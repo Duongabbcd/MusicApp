@@ -36,6 +36,7 @@ class SuggestAdapter(
     fun updateData(list: List<SuggestItem>, newKey: String = "") {
         dataList.clear()
         dataList.addAll(list)
+        println("updateData: $list")
         key = newKey
         notifyDataSetChanged()
     }

@@ -170,7 +170,7 @@ class RemoveOrRenameFile() {
                           for (value in playingList.size - 1 downTo 0) {
                               val audio = playingList[value] as Audio
                               if (audio.mediaObject?.id == songId) {
-                                  MusicPlayerRemote.removeFromQueue(value)
+                                  MusicPlayerRemote.removeFromQueue(audio)
                               }
                           }
                           MusicPlayerRemote.checkAfterDeletePlaying()

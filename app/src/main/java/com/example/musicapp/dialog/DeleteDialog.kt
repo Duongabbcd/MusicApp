@@ -135,26 +135,7 @@ class DeleteDialog(
 
     private fun deleteSongFromPlayingQueue(data: Any) {
         val song = data as Audio
-        val playingQueue = MusicPlayerRemote.getPlayingQueue()
-        val currentPosition = MusicPlayerRemote.getPosition()
-        val position = playingQueue.indexOf(song)
-        if (MusicPlayerRemote.getPlayingQueue().isNotEmpty()) {
-            playingQueue.removeAt(position)
-        }
-        if (playingQueue.isEmpty()) {
-            MusicPlayerRemote.clearQueue()
-        } else {
-            if (position == currentPosition) {
-                val p = if (position >= playingQueue.size) {
-                    0
-                } else {
-                    position
-                }
-                MusicPlayerRemote.openQueue(MusicPlayerRemote.getPlayingQueue(), p, true)
-            } else if (position < currentPosition) {
-                MusicPlayerRemote.setPosition(currentPosition - 1)
-            }
-        }
+        MusicPlayerRemote.removeFromQueue(song)
         context.sendBroadcast(Intent(Utils.ACTION_FINISH_DOWNLOAD))
         dismiss()
     }

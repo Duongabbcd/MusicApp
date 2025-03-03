@@ -71,8 +71,8 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
     
     <ImageView
-        android:src="@drawable/icon_maximize"
         android:id="@+id/albumSort"
+        android:src="@drawable/icon_maximize"
         android:background="?android:selectableItemBackgroundBorderless"
         android:layout_marginTop="@dimen/margin_8dp"
         android:padding="@dimen/padding_4dp"

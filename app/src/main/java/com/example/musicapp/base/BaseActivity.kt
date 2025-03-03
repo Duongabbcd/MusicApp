@@ -247,6 +247,7 @@ abstract class BaseActivity<T : ViewBinding>(private val inflater: Inflate<T>) :
     protected open fun setUpMiniPlayer() {
         try {
             val currentSong = MusicPlayerRemote.getCurrentSong()
+            println("currentSong: $currentSong")
             if (currentSong == Audio.EMPTY_SONG && currentSong.mediaObject?.path.isNullOrEmpty()) {
                 findViewById<View>(R.id.layout_mini_player).isVisible = false
                 return

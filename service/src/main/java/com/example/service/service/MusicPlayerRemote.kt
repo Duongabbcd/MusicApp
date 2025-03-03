@@ -217,32 +217,6 @@ object MusicPlayerRemote {
         }
     }
 
-    fun playNext(song: Audio): Boolean {
-        if (musicService != null) {
-            if (getPlayingQueue().isNotEmpty()) {
-                musicService!!.addSong(getPosition() + 1, song)
-            } else {
-                val queue = ArrayList<Any>()
-                queue.add(song)
-                openQueue(queue, 0, false)
-            }
-            return true
-        }
-        return false
-    }
-
-    fun playNext(songs: ArrayList<Any>): Boolean {
-        if (musicService != null) {
-            if (getPlayingQueue().isNotEmpty()) {
-                musicService!!.addSongs(getPosition() + 1, songs)
-            } else {
-                openQueue(songs, 0, false)
-            }
-            return true
-        }
-        return false
-    }
-
     fun enqueue(song: Audio): Boolean {
         if (musicService != null) {
             if (getPlayingQueue().isNotEmpty()) {

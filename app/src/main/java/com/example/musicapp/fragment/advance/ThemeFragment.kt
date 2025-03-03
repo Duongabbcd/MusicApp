@@ -8,6 +8,7 @@ import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import com.example.musicapp.R
 import com.example.musicapp.activity.MainActivity
+import com.example.musicapp.activity.basic.SettingActivity
 import com.example.musicapp.base.BaseFragment
 import com.example.musicapp.databinding.FragmentThemeBinding
 import com.example.musicapp.util.Utils
@@ -62,6 +63,11 @@ class ThemeFragment : BaseFragment<FragmentThemeBinding>(FragmentThemeBinding::i
                 requireActivity().recreate()
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        SettingActivity.position = 1
     }
 
     private fun checkCurrentTheme(currentTheme: Int, statusTheme: Int) {
