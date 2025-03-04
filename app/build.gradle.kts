@@ -56,6 +56,9 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.8.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.5.0")
+
     implementation(project(":service"))
     implementation(project(":wheelpicker"))
     implementation(project(":scrollbar"))
@@ -72,7 +75,7 @@ dependencies {
     annotationProcessor( "com.github.bumptech.glide:compiler:4.12.0")
 
     //Google Play
-    implementation("com.google.android.play:app-update:2.1.0")
+//    implementation("com.google.android.play:app-update:2.1.0")
 
     //Animation
     implementation( "com.airbnb.android:lottie:6.5.2")
@@ -90,7 +93,7 @@ dependencies {
 
     //Google Firebase Crash Analytics
     // Import the Firebase BoM
-    implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
+    implementation(platform("com.google.firebase:firebase-bom:33.10.0"))
 
 
     // TODO: Add the dependencies for Firebase products you want to use
