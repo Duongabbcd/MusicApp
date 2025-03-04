@@ -42,6 +42,7 @@
     <color name="button_selected">#1E4972</color>
     <color name="artist_selected">#143F67</color>
     <color name="exit_selected">#D7DDE8</color>
+    <color name="night_medium_background">#40000000</color>
 
     <!--    text color-->
     <color name="white_text">#FFFFFFFF</color>

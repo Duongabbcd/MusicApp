@@ -302,7 +302,7 @@ class PlayerActivity : BaseActivity<ActivityPlayerBinding>(ActivityPlayerBinding
         binding.playingSong.setOnClickListener {
             val currentSong = MusicPlayerRemote.getCurrentSong()
             com.example.service.utils.Utils.shareVideoOrAudio(
-                this,
+                this@PlayerActivity,
                 currentSong.mediaObject?.title,
                 currentSong.mediaObject?.path
             )

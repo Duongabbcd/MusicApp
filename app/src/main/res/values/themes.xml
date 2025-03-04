@@ -60,6 +60,7 @@
         <item name="fastScrollTextColor">@color/night_fast_scroll</item>
         <item name="fastScrollBackground">@color/white.0.25</item>
         <item name="colorControlHighlight">@color/white.0.0.5</item>
+        <item name="topHeaderBackground">@color/night_medium_background</item>
     </style>
 
     <style name="Theme_Day_MusicApp" parent="Theme.MusicApp">
@@ -82,7 +83,7 @@
         <item name="lowerItem">@color/light_search</item>
         <item name="squareItemBackground">@color/high_light_color_fade0.12</item>
         <item name="radiusBackground">@color/white</item>
-        <item name="navLineItem">@color/purple_text.0.2</item>
+        <item name="navLineItem">@color/purple_text.0.3</item>
         <item name="highlightBackground">@color/high_light_color</item>
         <item name="soundtrackBackground">@color/item_song_bg</item>
         <item name="topCornerBackground">@color/white</item>
@@ -100,7 +101,7 @@
         <item name="iconSong">@color/high_light_color</item>
         <item name="iconSongBackground">@color/high_light_color_fade0.12</item>
         <item name="iconSquare">@color/white</item>
-        <item name="iconAnonymous">@color/purple_text</item>
+        <item name="iconAnonymous">@color/unselect_tab</item>
         <item name="iconRound">@color/white</item>
         <item name="iconArtist">@color/item_song_bg</item>
         <item name="iconAlbumSquare">@drawable/icon_album_day</item>
@@ -109,6 +110,7 @@
         <item name="tabBackground">@color/white</item>
         <item name="fastScrollTextColor">@color/day_fast_scroll</item>
         <item name="fastScrollBackground">@color/black.0.25</item>
+        <item name="topHeaderBackground">@color/white</item>
     </style>
 
 
@@ -262,17 +264,17 @@
     </style>
 
     <style name="CustomTextPurpleStyle" parent="CustomTextStyleReverse">
-        <item name="android:textColor">@color/purple_text</item>
+        <item name="android:textColor">?attr/iconAnonymous</item>
         <item name="android:textSize">@dimen/size_15sp</item>
     </style>
 
     <style name="CustomTextPurpleStyleSemiBold" parent="CustomTextStyleSemiBold">
-        <item name="android:textColor">@color/purple_text</item>
+      <item name="android:textColor">?attr/iconAnonymous</item>
         <item name="android:textSize">@dimen/size_16sp</item>
     </style>
 
     <style name="CustomTextPurpleStyleMedium" parent="CustomTextStyleMedium">
-        <item name="android:textColor">@color/purple_text</item>
+      <item name="android:textColor">?attr/iconAnonymous</item>
         <item name="android:textSize">@dimen/size_16sp</item>
     </style>
 
@@ -347,27 +349,32 @@
 
     <style name="CustomTextSongArtistStyle" parent="CustomTextSongNameStyle16sp">
         <item name="android:textSize">@dimen/size_14sp</item>
-        <item name="android:textColor">@color/purple_text</item>
+      <item name="android:textColor">?attr/iconAnonymous</item>
+    </style>
+
+    <style name="CustomTextSongArtistStyle13sp" parent="CustomTextStyle">
+        <item name="android:textSize">@dimen/size_13sp</item>
+      <item name="android:textColor">?attr/iconAnonymous</item>
     </style>
 
     <style name="CustomTextSongArtistStyle12sp" parent="CustomTextSongArtistStyle">
         <item name="android:textSize">@dimen/size_12sp</item>
-        <item name="android:textColor">@color/purple_text</item>
+      <item name="android:textColor">?attr/iconAnonymous</item>
     </style>
 
     <style name="CustomTextSongMediumStyle15sp" parent="CustomTextStyleMedium">
         <item name="android:textSize">@dimen/size_15sp</item>
-        <item name="android:textColor">@color/purple_text</item>
+      <item name="android:textColor">?attr/iconAnonymous</item>
     </style>
 
     <style name="CustomTextSongArtistStyleSemiBold12sp" parent="CustomTextStyleSemiBold">
         <item name="android:textSize">@dimen/size_12sp</item>
-        <item name="android:textColor">@color/purple_text</item>
+      <item name="android:textColor">?attr/iconAnonymous</item>
     </style>
 
     <style name="CustomTextSongArtistStyle16sp" parent="CustomTextSongNameStyle16sp">
         <item name="android:textSize">@dimen/size_16sp</item>
-        <item name="android:textColor">@color/purple_text</item>
+      <item name="android:textColor">?attr/iconAnonymous</item>
     </style>
 
     <style name="CustomTextMediumStyle16sp" parent="CustomTextStyleMedium">

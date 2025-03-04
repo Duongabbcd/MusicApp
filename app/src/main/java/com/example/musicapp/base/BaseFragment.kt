@@ -22,10 +22,10 @@ abstract  class BaseFragment<T : ViewBinding>(private val inflate: Inflate<T>) :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        reloadData()
+        reloadData(false)
     }
 
-    open fun reloadData() {
+    open fun reloadData(isDisplayLoading: Boolean) {
         if(MainActivity.isChangeTheme) {
             return
         }

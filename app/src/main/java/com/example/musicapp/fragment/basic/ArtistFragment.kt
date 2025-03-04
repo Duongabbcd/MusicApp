@@ -50,7 +50,7 @@ class ArtistFragment : BaseFragment<FragmentArtitstBinding>(FragmentArtitstBindi
                 artistAdapter.notifyDataSetChanged()
             }
             if (action == Utils.ACTION_FINISH_DOWNLOAD) {
-                reloadData()
+                reloadData(true)
             }
         }
 
@@ -58,9 +58,9 @@ class ArtistFragment : BaseFragment<FragmentArtitstBinding>(FragmentArtitstBindi
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        reloadData()
+        reloadData(false)
         binding.layoutRefresh.setOnRefreshListener {
-            reloadData()
+            reloadData(true)
         }
         binding.allArtists.layoutManager = LinearLayoutManager(requireContext())
 
@@ -84,11 +84,11 @@ class ArtistFragment : BaseFragment<FragmentArtitstBinding>(FragmentArtitstBindi
         }
     }
 
-    override fun reloadData() {
+    override fun reloadData(isLoading:Boolean) {
         if(MainActivity.isChangeTheme) {
             return
         }
-        binding.layoutRefresh.isRefreshing = true
+        binding.layoutRefresh.isRefreshing = isLoading
         CoroutineScope(Dispatchers.IO).launch {
             val listArtist = SongLoader.getArtistLocal(requireContext())
             val allArtist = mutableListOf<Artist>()
@@ -129,7 +129,7 @@ class ArtistFragment : BaseFragment<FragmentArtitstBinding>(FragmentArtitstBindi
 
     override fun onResume() {
         super.onResume()
-        reloadData()
+        reloadData(false)
     }
 
 }

@@ -5,12 +5,14 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import com.example.service.model.Audio
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
+import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.musicapp.R
@@ -31,10 +33,9 @@ import kotlinx.coroutines.withContext
 
 
 class DownloadFragment : BaseFragment<FragmentDownloadBinding>(FragmentDownloadBinding::inflate) {
-    private val musicAdapter = SongAdapter(DisplayMode.AUDIO, true,{ str ->
+    private val musicAdapter = SongAdapter(DisplayMode.AUDIO, true, { str ->
         searchSong(str)
-    },{}) {
-            audio, isSelected ->
+    }, {}) { audio, isSelected ->
         println("SongFragment: $audio and $isSelected")
     }
     private val listSong = mutableListOf<Audio>()
@@ -50,7 +51,7 @@ class DownloadFragment : BaseFragment<FragmentDownloadBinding>(FragmentDownloadB
                 musicAdapter.notifyDataSetChanged()
             }
             if (action in listOf(Constant.ACTION_FINISH_DOWNLOAD, MusicService.QUEUE_CHANGED)) {
-                reloadData()
+                reloadData(true)
             }
         }
     }
@@ -75,7 +76,12 @@ class DownloadFragment : BaseFragment<FragmentDownloadBinding>(FragmentDownloadB
                 broadcastChange, intentFilter, Context.RECEIVER_EXPORTED
             )
         } else {
-            requireContext().registerReceiver(broadcastChange, intentFilter)
+            ContextCompat.registerReceiver(
+                requireContext(),
+                broadcastChange,
+                intentFilter,
+                ContextCompat.RECEIVER_NOT_EXPORTED
+            )
         }
 
     }
@@ -84,9 +90,9 @@ class DownloadFragment : BaseFragment<FragmentDownloadBinding>(FragmentDownloadB
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-
+            setUpTopToolbar()
             layoutRefresh.setOnRefreshListener {
-                reloadData()
+                reloadData(true)
             }
 
             downloadSongRV.layoutManager = LinearLayoutManager(requireContext())
@@ -114,7 +120,40 @@ class DownloadFragment : BaseFragment<FragmentDownloadBinding>(FragmentDownloadB
 
             verticalScrollbar.apply {
                 attachTo(downloadSongRV)
-                customTrackDrawable = ContextCompat.getDrawable(requireContext(), R.drawable.scrollbar_custom_track)
+                customTrackDrawable =
+                    ContextCompat.getDrawable(requireContext(), R.drawable.scrollbar_custom_track)
+            }
+        }
+    }
+
+    private fun setUpTopToolbar() {
+        var inputText = ""
+        binding.apply {
+            val listData: ArrayList<Audio> = SongLoader.getAllSongsDownload(requireContext())
+
+            topToolbar.apply {
+                albumCount.text = requireContext().resources.getQuantityString(
+                    R.plurals.song_count, listData.size, listData.size, listData.size
+                )
+
+                searchBarText.addTextChangedListener { s ->
+                    inputText = s.toString()
+                    if (inputText.isNotEmpty()) {
+                        searchBarIcon.visibility = View.VISIBLE
+                        searchBarIconLeft.visibility = View.GONE
+                        searchBarIcon.setImageResource(R.drawable.icon_close)
+                    } else {
+                        searchBarIcon.setImageResource(R.drawable.icon_search_purple)
+
+                    }
+
+                    searchSong(inputText)
+                }
+
+                searchBarIcon.setOnClickListener {
+                    searchBarText.setText("")
+                    searchSong("")
+                }
             }
         }
     }
@@ -126,15 +165,15 @@ class DownloadFragment : BaseFragment<FragmentDownloadBinding>(FragmentDownloadB
 
     override fun onResume() {
         super.onResume()
-        reloadData()
+        reloadData(false)
     }
 
-    override fun reloadData() {
+    override fun reloadData(isLoading: Boolean) {
         if (MainActivity.isChangeTheme) {
             return
         }
         binding.apply {
-            layoutRefresh.isRefreshing = true
+            layoutRefresh.isRefreshing = isLoading
             CoroutineScope(Dispatchers.IO).launch {
                 val listData: ArrayList<Audio> = SongLoader.getAllSongsDownload(requireContext())
                 listSong.clear()
@@ -159,7 +198,8 @@ class DownloadFragment : BaseFragment<FragmentDownloadBinding>(FragmentDownloadB
             CoroutineScope(Dispatchers.IO).launch {
                 val listSong =
                     SongLoader.getAllSongsDownload(
-                        requireContext())
+                        requireContext()
+                    )
                 if (listSong.isEmpty()) {
                     return@launch
                 }
@@ -172,6 +212,9 @@ class DownloadFragment : BaseFragment<FragmentDownloadBinding>(FragmentDownloadB
 
                 withContext(Dispatchers.Main) {
                     musicAdapter.updateData(selected, searchKey)
+                    binding.topToolbar.albumCount.text = requireContext().resources.getQuantityString(
+                        R.plurals.song_count, listSong.size, listSong.size, listSong.size
+                    )
                 }
             }
         } catch (e: Exception) {

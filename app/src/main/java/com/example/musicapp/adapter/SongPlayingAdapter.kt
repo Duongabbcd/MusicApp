@@ -45,6 +45,7 @@ class SongPlayingAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 
     fun updateData(list: List<Any>) {
+        println("SongPlayingAdapter: ${list[0]}")
         lastVisibleItemPosition = 9999
         listData.clear()
         listData.addAll(list)

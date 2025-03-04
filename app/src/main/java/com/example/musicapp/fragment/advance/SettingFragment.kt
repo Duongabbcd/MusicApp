@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.musicapp.activity.MainActivity
+import com.example.musicapp.activity.basic.SettingActivity
 import com.example.musicapp.adapter.advance.Setting
 import com.example.musicapp.adapter.advance.SettingAdapter
 import com.example.musicapp.base.BaseFragment
@@ -43,6 +44,7 @@ class SettingFragment: BaseFragment<FragmentSettingBinding>(FragmentSettingBindi
             settingRV.layoutManager = layoutManager
             settingRV.adapter = settingAdapter
             backBtn.setOnClickListener {
+                SettingActivity.position = -1
                 requireContext().startActivity(Intent(requireContext(), MainActivity::class.java))
             }
             downloadLayout.setOnClickListener {
@@ -58,5 +60,10 @@ class SettingFragment: BaseFragment<FragmentSettingBinding>(FragmentSettingBindi
                 //do nothing
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        SettingActivity.position = 0
     }
 }
